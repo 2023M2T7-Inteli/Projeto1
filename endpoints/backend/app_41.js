@@ -14,7 +14,7 @@ app.use(express.static("../front/"));
 
 /* Definição dos endpoints */
 /******** CRUD ************/
-app.use(express.json());
+app.use(bodyParser.json());
 
 // Retorna todos registros (é o R do CRUD - Read)
 app.get('/Produtor', (req, res) => {
@@ -38,6 +38,7 @@ app.post('/insereProdutor', urlencodedParser, (req, res) => {
 	res.setHeader('Access-Control-Allow-Origin', '*'); 
 	var db = new sqlite3.Database(DBPATH); // Abre o banco
 	sql = "INSERT INTO Produtor (nome, login, senha) VALUES ('" + req.body.nome + "', '" + req.body.login + "', '" + req.body.senha + "')";
+	console.log("jaslkdjlkas" + req.boddy)
 	console.log(sql);
 	db.run(sql, [],  err => {
 		if (err) {
@@ -49,28 +50,11 @@ app.post('/insereProdutor', urlencodedParser, (req, res) => {
 	res.end();
 });
 
-// Monta o formulário para o update (é o U do CRUD - Update)
-app.get('/atualizarProdutor', (req, res) => {
-	res.statusCode = 200;
-	res.setHeader('Access-Control-Allow-Origin', '*'); 
-	console.log(req.query.ID_Produtor);
-	sql = "SELECT * FROM Produtor WHERE ID_Produtor="+ req.query.ID_Produtor;
-	console.log(sql);
-	var db = new sqlite3.Database(DBPATH); // Abre o banco
-	db.all(sql, [],  (err, rows ) => {
-		if (err) {
-			throw err;
-		}
-		res.json(rows);
-	});
-	db.close(); // Fecha o banco
-});
-
 // Atualiza um registro (é o U do CRUD - Update)
 app.post('/atualizarProdutor', urlencodedParser, (req, res) => {
 	res.statusCode = 200;
 	res.setHeader('Access-Control-Allow-Origin', '*'); 
-	sql = "UPDATE Produtor SET nome='" + req.body.nome + "', login= '" + req.body.login + "' , senha='" + req.body.senha + "' WHERE ID_Produtor='" + req.body.ID_Produtor + "'";
+	sql = "UPDATE Produtor SET nome='" + req.body.nome + "', login= '" + req.body.login + "' , senha='" + req.body.senha + "' WHERE ID_Produtor=" + req.body.ID_Produtor;
 	console.log(sql);
 	var db = new sqlite3.Database(DBPATH); // Abre o banco
 	db.run(sql, [],  err => {
