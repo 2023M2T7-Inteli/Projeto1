@@ -9,10 +9,10 @@
   <body>
     <h1>Atualização do Produtor</h1>
 
-    <form name="form1" method="post" action="/atualizaProdutor">
+    <form name="form1" method="post" action="/atualizarProdutor">
         NOME: <input type="text" id="nome" name="nome" size="50" value="">
         <br>
-        LOGIN: <input type="number" id="login" name="login" value="">
+        LOGIN: <input type="text" id="login" name="login" value="">
         <br>
         SENHA: <input type="text" id="senha" name="senha" value="">
         <br>
@@ -25,7 +25,7 @@
     <script>
         let url = new URL(window.location.href);
         let params = url.searchParams;
-        url = '/atualizaProdutor?ID_Produtor='+url.searchParams.get("ID_Produtor");
+        url = '/atualizarProdutor?ID_Produtor='+url.searchParams.get("ID_Produtor");
 
         fetch(url)
         .then((response) => {

@@ -20,7 +20,7 @@
         let Produtor = data;
         let saida = '';
         Produtor.map(function(Produtor) {
-          saida += '<strong> '+ `${Produtor.nome}` + '</strong> ' + `${Produtor.login}`  + ' - ' +  `${Produtor.senha}`;
+          saida += '<strong> '+ `${Produtor.nome}` + '</strong> ' + `${Produtor.login}`;
           saida += ' - <a href="/atualizar.html?ID_Produtor=' + `${Produtor.ID_Produtor}` + '">EDITAR</a>';
           saida += ' | <a href="/removeProdutor?ID_Produtor='+`${Produtor.ID_Produtor}`+'">REMOVER</a></br>';
         });

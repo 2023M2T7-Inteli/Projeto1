@@ -3,14 +3,14 @@ const bodyParser = require('body-parser');
 const urlencodedParser = bodyParser.urlencoded({ extended: false })
 
 const sqlite3 = require('sqlite3').verbose();
-const DBPATH = 'data/banco.db';
+const DBPATH = '../data/banco.db';
 
 const hostname = '127.0.0.1';
 const port = 3001;
 const app = express();
 
 /* Colocar toda a parte estática no frontend */
-app.use(express.static("front/"));
+app.use(express.static("../front/"));
 
 /* Definição dos endpoints */
 /******** CRUD ************/
@@ -70,7 +70,7 @@ app.get('/atualizarProdutor', (req, res) => {
 app.post('/atualizarProdutor', urlencodedParser, (req, res) => {
 	res.statusCode = 200;
 	res.setHeader('Access-Control-Allow-Origin', '*'); 
-	sql = "UPDATE Produtor SET nome='" + req.body.nome + "', login = '" + req.body.login + "' , senha='" + req.body.senha + "' WHERE ID_Produtor='" + req.body.ID_Produtor + "'";
+	sql = "UPDATE Produtor SET nome='" + req.body.nome + "', login= '" + req.body.login + "' , senha='" + req.body.senha + "' WHERE ID_Produtor='" + req.body.ID_Produtor + "'";
 	console.log(sql);
 	var db = new sqlite3.Database(DBPATH); // Abre o banco
 	db.run(sql, [],  err => {
