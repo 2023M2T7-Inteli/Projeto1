@@ -25,7 +25,7 @@
     <script>
         let url = new URL(window.location.href);
         let params = url.searchParams;
-        url = '/atualizarProdutor?ID_Produtor='+url.searchParams.get("ID_Produtor");
+        url = '/Produtor?ID_Produtor='+url.searchParams.get("ID_Produtor");
 
         fetch(url)
         .then((response) => {
