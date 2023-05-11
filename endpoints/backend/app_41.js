@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const urlencodedParser = bodyParser.urlencoded({ extended: false })
 
 const sqlite3 = require('sqlite3').verbose();
-const DBPATH = '../data/banco.db';
+const DBPATH = '../data/banco_modelo_relacional.db';
 
 const hostname = '127.0.0.1';
 const port = 3001;
@@ -16,7 +16,7 @@ app.use(express.static("../front/"));
 /******** CRUD ************/
 app.use(bodyParser.json());
 
-// Retorna todos registros (é o R do CRUD - Read)
+// Retorna todos Logins da tabela produtor (é o R do CRUD - Read)
 app.get('/Produtor', (req, res) => {
 	res.statusCode = 200;
 	res.setHeader('Access-Control-Allow-Origin', '*');
