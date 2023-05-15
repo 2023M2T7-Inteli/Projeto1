@@ -84,6 +84,72 @@ app.get('/removeProdutor', urlencodedParser, (req, res) => {
 	db.close(); // Fecha o banco
 });
 
+app.get('/Pesquisador', (req, res) => {
+	res.statusCode = 200;
+	res.setHeader('Access-Control-Allow-Origin', '*');
+	var db = new sqlite3.Database(DBPATH); // Abre o banco
+	var sql = 'SELECT * FROM Pesquisador';
+		db.all(sql, [],  (err, rows ) => {
+			if (err) {
+				throw err;
+			}
+			res.json(rows);
+			console.log(rows)
+		});
+		db.close(); // Fecha o banco
+});
+
+// Insere um registro (é o C do CRUD - Create)
+app.post('/inserePesquisador', urlencodedParser, (req, res) => {
+	res.statusCode = 200;
+	res.setHeader('Access-Control-Allow-Origin', '*'); 
+	var db = new sqlite3.Database(DBPATH); // Abre o banco
+	sql = "INSERT INTO Pesquisador (nome, login, senha) VALUES ('" + req.body.nome + "', '" + req.body.login + "', '" + req.body.senha + "')";
+	console.log("jaslkdjlkas" + req.boddy)
+	console.log(sql);
+	db.run(sql, [],  err => {
+		if (err) {
+		    throw err;
+		}	
+	});
+	res.write('<p>PESQUISADOR INSERIDO COM SUCESSO!</p><a href="/">VOLTAR</a>');
+	db.close(); // Fecha o banco
+	res.end();
+});
+
+// Atualiza um registro (é o U do CRUD - Update)
+app.post('/atualizarPesquisador', urlencodedParser, (req, res) => {
+	res.statusCode = 200;
+	res.setHeader('Access-Control-Allow-Origin', '*'); 
+	sql = "UPDATE Pesquisador SET nome='" + req.body.nome + "', login= '" + req.body.login + "' , senha='" + req.body.senha + "' WHERE ID_Pesquisador=" + req.body.ID_Pesquisador;
+	console.log(sql);
+	var db = new sqlite3.Database(DBPATH); // Abre o banco
+	db.run(sql, [],  err => {
+		if (err) {
+		    throw err;
+		}
+		res.end();
+	});
+	res.write('<p>PESQUISADOR ATUALIZADO COM SUCESSO!</p><a href="/">VOLTAR</a>');
+	db.close(); // Fecha o banco
+});
+
+// Exclui um registro (é o D do CRUD - Delete)
+app.get('/removePesquisador', urlencodedParser, (req, res) => {
+	res.statusCode = 200;
+	res.setHeader('Access-Control-Allow-Origin', '*'); 
+	sql = "DELETE FROM Pesquisador WHERE ID_Pesquisador='" + req.query.ID_Pesquisador + "'";
+	console.log(sql);
+	var db = new sqlite3.Database(DBPATH); // Abre o banco
+	db.run(sql, [],  err => {
+		if (err) {
+		    throw err;
+		}
+		res.write('<p>PESQUISADOR REMOVIDO COM SUCESSO!</p><a href="/">VOLTAR</a>');
+		res.end();
+	});
+	db.close(); // Fecha o banco
+});
 
 
 app.listen(port, hostname, () => {
