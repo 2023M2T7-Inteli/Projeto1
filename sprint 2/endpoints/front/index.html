@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width" />
+    <title>CRUD</title>
+  </head>
+  <h1>Listagem de Produtores</h1>
+  <p><a href="/inserir.html">INSERIR NOVO PRODUTOR</a></p>
+
+  <script>
+    const url = '/Produtor';
+  
+    fetch(url)
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        let Produtor = data;
+        let saida = '';
+        Produtor.map(function(Produtor) {
+          saida += '<strong> '+ `${Produtor.nome}` + '</strong> ' + `${Produtor.login}`;
+          saida += ' - <a href="/atualizar.html?ID_Produtor=' + `${Produtor.ID_Produtor}` + '">EDITAR</a>';
+          saida += ' | <a href="/removeProdutor?ID_Produtor='+`${Produtor.ID_Produtor}`+'">REMOVER</a></br>';
+        });
+        document.getElementById('resultado').innerHTML = saida;
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+      
+
+  </script>
+
+  <body>
+    <div id="resultado"></div>
+  </body>
+</html>
