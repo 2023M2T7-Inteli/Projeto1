@@ -50,6 +50,22 @@ app.post('/insereProdutor', urlencodedParser, (req, res) => {
 	res.end();
 });
 
+// Monta o formulário para o update (é o U do CRUD - Update)
+app.get('/atualizarProdutor', (req, res) => {
+	res.statusCode = 200;
+	res.setHeader('Access-Control-Allow-Origin', '*'); 
+	sql = "SELECT * FROM Produtor WHERE ID_Produtor="+ req.query.ID_Produtor;
+	console.log(sql);
+	var db = new sqlite3.Database(DBPATH); // Abre o banco
+	db.all(sql, [],  (err, rows ) => {
+		if (err) {
+			throw err;
+		}
+		res.json(rows);
+	});
+	db.close(); // Fecha o banco
+});
+
 // Atualiza um registro (é o U do CRUD - Update)
 app.post('/atualizarProdutor', urlencodedParser, (req, res) => {
 	res.statusCode = 200;
@@ -117,6 +133,22 @@ app.post('/inserePesquisador', urlencodedParser, (req, res) => {
 	res.end();
 });
 
+// Monta o formulário para o update (é o U do CRUD - Update)
+app.get('/atualizarPesquisar', (req, res) => {
+	res.statusCode = 200;
+	res.setHeader('Access-Control-Allow-Origin', '*'); 
+	sql = "SELECT * FROM Pesquisador WHERE ID_Pesquisador="+ req.query.ID_Pesquisador;
+	console.log(sql);
+	var db = new sqlite3.Database(DBPATH); // Abre o banco
+	db.all(sql, [],  (err, rows ) => {
+		if (err) {
+			throw err;
+		}
+		res.json(rows);
+	});
+	db.close(); // Fecha o banco
+});
+
 // Atualiza um registro (é o U do CRUD - Update)
 app.post('/atualizarPesquisador', urlencodedParser, (req, res) => {
 	res.statusCode = 200;
@@ -133,6 +165,7 @@ app.post('/atualizarPesquisador', urlencodedParser, (req, res) => {
 	res.write('<p>PESQUISADOR ATUALIZADO COM SUCESSO!</p><a href="/">VOLTAR</a>');
 	db.close(); // Fecha o banco
 });
+
 
 // Exclui um registro (é o D do CRUD - Delete)
 app.get('/removePesquisador', urlencodedParser, (req, res) => {
