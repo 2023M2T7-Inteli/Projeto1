@@ -1,13 +1,14 @@
+
 import { Router } from "express";
 
-const pesquisadorRouter = Router();
+const etapaRouter = Router();
 
-// Retorna todos Logins da tabela pesquisador (é o R do CRUD - Read)
-pesquisadorRouter.get('/', (req, res) => {
+// Retorna todas informações da tabela Etapas (é o R do CRUD - Read)
+app.get('/', (req, res) => {
 	res.statusCode = 200;
 	res.setHeader('Access-Control-Allow-Origin', '*');
 	var db = new sqlite3.Database(DBPATH); // Abre o banco
-	var sql = 'SELECT * FROM Pesquisador';
+	var sql = 'SELECT * FROM Etapa';
 		db.all(sql, [],  (err, rows ) => {
 			if (err) {
 				throw err;
@@ -19,12 +20,11 @@ pesquisadorRouter.get('/', (req, res) => {
 });
 
 // Insere um registro (é o C do CRUD - Create)
-pesquisadorRouter.post('/inserePesquisador', (req, res) => {
+app.post('/insereEtapa', (req, res) => {
 	res.statusCode = 200;
 	res.setHeader('Access-Control-Allow-Origin', '*'); 
 	var db = new sqlite3.Database(DBPATH); // Abre o banco
-	sql = "INSERT INTO Pesquisador (nome, login, senha) VALUES ('" + req.body.nome + "', '" + req.body.login + "', '" + req.body.senha + "')";
-	console.log("jaslkdjlkas" + req.boddy)
+	sql = "INSERT INTO Etapa (nome, status) VALUES ('" + req.body.nome + "', '" + req.body.status + "')";
 	console.log(sql);
 	db.run(sql, [],  err => {
 		if (err) {
@@ -36,10 +36,10 @@ pesquisadorRouter.post('/inserePesquisador', (req, res) => {
 });
 
 // Monta o formulário para o update (é o U do CRUD - Update)
-pesquisadorRouter.get('/atualizarPesquisar', (req, res) => {
+app.get('/atualizarEtapa', (req, res) => {
 	res.statusCode = 200;
 	res.setHeader('Access-Control-Allow-Origin', '*'); 
-	sql = "SELECT * FROM Pesquisador WHERE ID_Pesquisador="+ req.query.ID_Pesquisador;
+	sql = "SELECT * FROM Etapa WHERE ID_Etapa="+ req.query.ID_Etapa;
 	console.log(sql);
 	var db = new sqlite3.Database(DBPATH); // Abre o banco
 	db.all(sql, [],  (err, rows ) => {
@@ -52,10 +52,10 @@ pesquisadorRouter.get('/atualizarPesquisar', (req, res) => {
 });
 
 // Atualiza um registro (é o U do CRUD - Update)
-pesquisadorRouter.post('/atualizarPesquisador', (req, res) => {
+app.post('/atualizarEtapa', (req, res) => {
 	res.statusCode = 200;
 	res.setHeader('Access-Control-Allow-Origin', '*'); 
-	sql = "UPDATE Pesquisador SET nome='" + req.body.nome + "', login= '" + req.body.login + "' , senha='" + req.body.senha + "' WHERE ID_Pesquisador=" + req.body.ID_Pesquisador;
+	sql = "UPDATE Etapa SET nome='" + req.body.nome + "', status= '" + req.body.status + "' WHERE ID_Etapa=" + req.body.ID_Etapa;
 	console.log(sql);
 	var db = new sqlite3.Database(DBPATH); // Abre o banco
 	db.run(sql, [],  err => {
@@ -68,10 +68,10 @@ pesquisadorRouter.post('/atualizarPesquisador', (req, res) => {
 });
 
 // Exclui um registro (é o D do CRUD - Delete)
-pesquisadorRouter.get('/removePesquisador', (req, res) => {
+app.get('/removeEtapa', (req, res) => {
 	res.statusCode = 200;
 	res.setHeader('Access-Control-Allow-Origin', '*'); 
-	sql = "DELETE FROM Pesquisador WHERE ID_Pesquisador='" + req.query.ID_Pesquisador + "'";
+	sql = "DELETE FROM Etapa WHERE ID_Etapa='" + req.query.ID_Etapa + "'";
 	console.log(sql);
 	var db = new sqlite3.Database(DBPATH); // Abre o banco
 	db.run(sql, [],  err => {
@@ -82,4 +82,4 @@ pesquisadorRouter.get('/removePesquisador', (req, res) => {
 	});
 	db.close(); // Fecha o banco
 });
-export default pesquisadorRouter;
+export default etapaRouter;
