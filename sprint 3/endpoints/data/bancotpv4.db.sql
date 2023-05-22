@@ -3,8 +3,8 @@ CREATE TABLE IF NOT EXISTS "Protocolo" (
 	"nome"	TEXT NOT NULL,
 	"ID_Protocolo"	INTEGER NOT NULL,
 	"ID_Etapa"	INTEGER NOT NULL,
-	PRIMARY KEY("ID_Protocolo" AUTOINCREMENT),
-	FOREIGN KEY("ID_Etapa") REFERENCES "Etapa"("ID_Etapa")
+	FOREIGN KEY("ID_Etapa") REFERENCES "Etapa"("ID_Etapa"),
+	PRIMARY KEY("ID_Protocolo" AUTOINCREMENT)
 );
 CREATE TABLE IF NOT EXISTS "Produtor" (
 	"nome"	TEXT NOT NULL,
@@ -15,11 +15,11 @@ CREATE TABLE IF NOT EXISTS "Produtor" (
 );
 CREATE TABLE IF NOT EXISTS "Etapa" (
 	"nome"	TEXT NOT NULL,
-	"status" CHAR(1) NOT NULL,
+	"status"	CHAR(1) NOT NULL,
 	"ID_Etapa"	INTEGER NOT NULL,
 	"ID_Projeto"	INTEGER NOT NULL,
-	PRIMARY KEY("ID_Etapa" AUTOINCREMENT),
-	FOREIGN KEY("ID_Projeto") REFERENCES "Projeto"("ID_Projeto")
+	FOREIGN KEY("ID_Projeto") REFERENCES "Projeto"("ID_Projeto"),
+	PRIMARY KEY("ID_Etapa" AUTOINCREMENT)
 );
 CREATE TABLE IF NOT EXISTS "Pesquisador" (
 	"nome"	TEXT NOT NULL,
@@ -34,26 +34,26 @@ CREATE TABLE IF NOT EXISTS "Projeto" (
 	"ID_Projeto"	INTEGER NOT NULL,
 	"ID_Produtor"	INTEGER NOT NULL,
 	"ID_Pesquisador"	INTEGER NOT NULL,
-	PRIMARY KEY("ID_Projeto" AUTOINCREMENT),
+	FOREIGN KEY("ID_Pesquisador") REFERENCES "Pesquisador"("ID_Pesquisador"),
 	FOREIGN KEY("ID_Produtor") REFERENCES "Produtor"("ID_Produtor"),
-	FOREIGN KEY("ID_Pesquisador") REFERENCES "Pesquisador"("ID_Pesquisador")
+	PRIMARY KEY("ID_Projeto" AUTOINCREMENT)
 );
 CREATE TABLE IF NOT EXISTS "Item" (
 	"tipo_item"	TEXT NOT NULL,
 	"valor"	TEXT NOT NULL,
-	"status" CHAR(1) NOT NULL,
+	"status"	CHAR(1) NOT NULL,
 	"ID_Item"	INTEGER NOT NULL,
 	"ID_Protocolo"	INTEGER NOT NULL,
-	PRIMARY KEY("ID_Item" AUTOINCREMENT),
 	FOREIGN KEY("ID_Protocolo") REFERENCES "Protocolo"("ID_Protocolo"),
+	PRIMARY KEY("ID_Item" AUTOINCREMENT)
 );
 CREATE TABLE IF NOT EXISTS "Foto" (
 	"tipo_de_foto"	TEXT NOT NULL,
 	"valor"	TEXT NOT NULL,
 	"ID_Fotos"	INTEGER NOT NULL,
 	"ID_Protocolo"	INTEGER,
-	PRIMARY KEY("ID_Fotos" AUTOINCREMENT),
 	FOREIGN KEY("ID_Protocolo") REFERENCES "Protocolo"("ID_Protocolo"),
+	PRIMARY KEY("ID_Fotos" AUTOINCREMENT)
 );
 INSERT INTO "Produtor" ("nome","login","senha","ID_Produtor") VALUES ('nome','1234','abc123',1),
  ('nome2','1234','abc123',2);
@@ -75,7 +75,10 @@ CREATE UNIQUE INDEX IF NOT EXISTS "pk_Etapa" ON "Etapa" (
 CREATE UNIQUE INDEX IF NOT EXISTS "pk_Item" ON "Item" (
 	"ID_Item"
 );
-CREATE UNIQUE INDEX IF NOT EXISTS "pk_Fotos" ON "Fotos" (
+CREATE UNIQUE INDEX IF NOT EXISTS "pk_Pesquisador" ON "Pesquisador" (
+	"ID_Pesquisador"
+);
+CREATE UNIQUE INDEX IF NOT EXISTS "pk_Fotos" ON "Foto" (
 	"ID_Fotos"
 );
 COMMIT;
