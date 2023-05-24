@@ -6,7 +6,7 @@ import sql3 from "sqlite3";
 const urlencodedParser = bodyParser.urlencoded({ extended: false })
 
 const sqlite3 = sql3.verbose();
-const DBPATH = '../data/banco_modelo_relacional.db';
+const DBPATH = '../data/bancov8.db';
 
 const hostname = '127.0.0.1';
 const port = 3001;
