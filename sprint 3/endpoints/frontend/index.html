@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Standart web pages configuration -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width" />
+    <!-- Importing an external stylesheet (css) file -->
+    <link rel="stylesheet" href="css/styleLogin.css">
+    <!-- Page title -->
+    <title>Teko Porã</title>
+  </head>
+  <body>
+    <!-- Login container, where all interactions will take place -->
+    <div class="container">
+      <!-- Login form -->
+      <form>
+        <!-- Container title -->
+        <h1>LOGIN</h1>
+        <!-- Email field label -->
+        <label for="email">EMAIL</label>
+        <!-- Email input field -->
+        <input type="email" id="email" name="email" required>
+        <!-- Password field label -->
+        <label for="password">SENHA</label>
+        <!-- Password input field -->
+        <input type="password" id="password" name="password" required>
+        <!-- Form submit button -->
+        <button type="submit">ENTRAR</button>
+        <!-- Line break -->
+        <br>
+        <!-- Button to redirect to the registration page -->
+        <button type="button" class="orangebutton" onclick="window.location.href='../html/signUp.html'">CADASTRAR-SE</button>
+        <!-- Line break -->
+        <br>
+      </form>
+    </div>
+    <!-- Importing a script file -->
+    <script src="js/scriptLogin.js"></script>
+  </body>
+</html>
