@@ -29,13 +29,24 @@ Criar uma interface dinâmica e simples, com diversas figuras e com a menor quan
 
 -Raiz<br>
 |<br>
-|-->docs<br>
-  &emsp;|backend<br>
-  &emsp;|data<br>
-  &emsp;|frontend<br>
-|-->documentos<br>
-  &emsp;|-->antigos<br>
-  &emsp;|WAD.docx<br>
+|sprint1
+    |-->documentos<br>
+      &emsp;|WAD_v1.pdf<br>
+|sprint2
+    |-->codigo<br>
+      &emsp;|backend<br>
+      &emsp;|data<br>
+      &emsp;|frontend<br>
+    |-->documentos<br>
+      &emsp;|WAD_v2.pdf<br>
+sprint3
+    |-->codigo<br>
+      &emsp;|backend<br>
+      &emsp;|data<br>
+      &emsp;|frontend<br>
+    |-->documentos<br>
+      &emsp;|WAD_v3.pdf<br>
+|LICENSE
 |readme.md<br>
 
 
@@ -53,13 +64,12 @@ Há também 4 pastas que seguem da seguinte forma:
 
 ## 🗃 Histórico de lançamentos
 
-A cada atualização os detalhes devem ser lançados aqui.
 * 1.0.0 - 11/05/2023
     * NEW: Adicionar o WAD.
     * NEW: Definição de uma paleta de cores
     * NEW: Criação de um backend.
     * NEW: Criação de um banco de dados.
-* 1.0.1 - 25/05/2023
+* 2.0.0 - 25/05/2023
     * UPDATE: Mudança do banco de dados.
     * UPDATE: Implemntação de rotas para o backend.
     * NEW: Criação de um frontend
