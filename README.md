@@ -25,30 +25,30 @@ Contribuir com a inclusão digital dos  produtores que fornecem matéria prima p
 Criar uma interface dinâmica e simples, com diversas figuras e com a menor quantidade possível de texto onde os pesquisadores poderão criar os protocolos com poucos cliques. Desta forma será fornecido uma dinamicidade e praticidade ao montarem os formulários.
 
 
-## 🛠 Estrutura de pastas
-
+## 🛠 Estrutura de pastas<br>
+<pre>
 -Raiz<br>
 |<br>
-|sprint1
+|sprint1<br>
     |-->documentos<br>
       &emsp;|WAD_v1.pdf<br>
-|sprint2
+|sprint2<br>
     |-->codigo<br>
       &emsp;|backend<br>
       &emsp;|data<br>
       &emsp;|frontend<br>
     |-->documentos<br>
       &emsp;|WAD_v2.pdf<br>
-sprint3
+|sprint3<br>
     |-->codigo<br>
       &emsp;|backend<br>
       &emsp;|data<br>
       &emsp;|frontend<br>
     |-->documentos<br>
       &emsp;|WAD_v3.pdf<br>
-|LICENSE
+|LICENSE<br>
 |readme.md<br>
-
+</pre>
 
 <b>README.MD</b>: Arquivo que serve como guia e explicação geral sobre seu projeto. O mesmo que você está lendo agora.
 
@@ -75,3 +75,5 @@ Há também 4 pastas que seguem da seguinte forma:
     * NEW: Criação de um frontend
     * UPDATE: Implementação da paleta de cores no CSS
     * UPDATE: Comentários e modularização do frontend
+*2.0.2 - 26/05/2023
+    * NEW: Guia de estilos
