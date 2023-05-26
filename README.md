@@ -75,5 +75,5 @@ Há também 4 pastas que seguem da seguinte forma:
     * NEW: Criação de um frontend
     * UPDATE: Implementação da paleta de cores no CSS
     * UPDATE: Comentários e modularização do frontend
-*2.0.2 - 26/05/2023
+* 2.0.2 - 26/05/2023
     * NEW: Guia de estilos
