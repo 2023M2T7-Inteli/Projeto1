@@ -7,16 +7,11 @@ import itemRouter from "./Item/rotas.js";
 import projetoRouter from "./Projeto/rotas.js";
 import protocoloRouter from "./Protocolo/rotas.js";
 import fotoRouter from "./Foto/rotas.js";
-
+import alocacaoRouter from "./alocacao/rotas.js";
 /* Router creation */
 const routes = Router();
 
 // Specific routers for different routes
-routes.use("/produtor", produtorRouter);
-// The "produtorRouter" is used for handling requests to the "/produtor" route, this router handles operations related to "Produtores" (producers)
-
-routes.use("/pesquisador", pesquisadorRouter);
-// The "pesquisadorRouter" is used for handling requests to the "/pesquisador" route, this router handles operations related to "Pesquisador" (researchers)
 
 routes.use("/etapa", etapaRouter);
 // The "etapaRouter" is used for handling requests to the "/etapa" route, this router handles operations related to "Etapa" (stage)
@@ -32,5 +27,7 @@ routes.use("/protocolo", protocoloRouter);
 
 routes.use("/foto", fotoRouter);
 // The "fotoRouter" is used for handling requests to the "/foto" route, this router handles operations related to "Foto" (photo)
+
+routes.use("/alocacao", alocacaoRouter);
 
 export default routes;

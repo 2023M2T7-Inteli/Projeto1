@@ -2,7 +2,7 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import sqlite3 from 'sqlite3';
 
-const DBPATH = '../data/bancov8.db';
+const DBPATH = './data/banco.db';
 const hostname = '127.0.0.1';
 const port = 3001;
 
@@ -10,7 +10,7 @@ const app = express();
 const urlencodedParser = bodyParser.urlencoded({ extended: false });
 const db = new sqlite3.Database(DBPATH);
 
-app.use(express.static("../frontend/"));
+app.use(express.static("./frontend/"));
 app.use(bodyParser.json());
 
 // Endpoint to retrieve all users
