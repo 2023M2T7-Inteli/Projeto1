@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <!-- This line sets the title of the web page to "Teko Porã" -->
+    <title>Teko Porã</title>
+    <!-- Importing an external stylesheet (css) file -->
+    <link rel="stylesheet" href="../css/newFormStyle.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v7.3.0/ol.css">
+  </head>
+  <body>
+    <header class="top">
+        <!-- input field for the "protocolo" name -->
+      <input class="protocolName" placeholder="Nome do protocolo">
+    </header>
+    <div class="section left">
+        <!-- title for the section -->
+      <h1>ITENS</h1>
+      <!-- each button have a diferent function -->
+        <!--when clicked, add the section "NOME" to the "protocolo"-->
+      <button onclick=addName() class="myButton">NOME<span class="addIcon">+</span></button>
+      <!--when clicked, add the section "DATA" to the "protocolo"-->
+      <button onclick=addDate() class="myButton">DATA<span class="addIcon">+</span></button>
+        <!--when clicked, add the section "LOCAL" to the "protocolo"-->
+      <button onclick=addLocal() class="myButton">LOCAL<span class="addIcon">+</span></button>
+        <!--when clicked, add the section "FOTO" to the "protocolo"-->
+      <button onclick=addPhoto() class="myButton">FOTO<span class="addIcon">+</span></button>
+    </div>
+    <div id="myContainer" class="section middle"></div>
+    <div class="section right" id= "stageContainer">
+      <div class="titleStages">
+         <!-- title for the section -->
+        <h1>ETAPAS</h1>
+        <span onclick=addStage() class="addIconStage">+</span>
+      </div>
+    </div>
+    <!-- This script tag includes the OpenLayers library from a CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/ol@v7.3.0/dist/ol.js"></script>
+    <!-- This script tag links an external JavaScript file -->
+    <script src="../js/scriptNewForm.js"></script>
+  </body>
+</html> 

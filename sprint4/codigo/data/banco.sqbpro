@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="C:/Users/Inteli/Desktop/testeDB/banco de dados novo/bancov13.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="150"/><column_width id="3" width="3118"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="4,8:mainAlocacao"/><default_encoding codec=""/><browse_table_settings/></tab_browse><tab_sql><sql name="SQL 1">BEGIN TRANSACTION;
+CREATE TABLE IF NOT EXISTS Protocolo(
+	&quot;nome&quot;	TEXT NOT NULL,
+	&quot;status&quot; CHAR(1) NOT NULL,
+	&quot;ID_Protocolo&quot;	INTEGER NOT NULL,
+	PRIMARY KEY(&quot;ID_Protocolo&quot; AUTOINCREMENT)
+);
+CREATE TABLE IF NOT EXISTS Usuario (
+	&quot;login&quot;	TEXT NOT NULL,
+	&quot;senha&quot;	TEXT NOT NULL,
+	&quot;tipo&quot;	TEXT NOT NULL,
+	&quot;ID_Usuario&quot;	INTEGER NOT NULL,
+	PRIMARY KEY(&quot;ID_Usuario&quot; AUTOINCREMENT)
+);
+CREATE TABLE IF NOT EXISTS Alocacao (
+	&quot;data_de_inicio&quot;	INTEGER NOT NULL,
+	&quot;data_de_fim&quot;	INTEGER NOT NULL,
+	&quot;ID_Alocacao&quot;	INTEGER PRIMARY KEY,
+	&quot;ID_Protocolo&quot; INTEGER NOT NULL,
+	&quot;ID_Usuario&quot; INTEGER NOT NULL,
+	FOREIGN KEY(&quot;ID_Protocolo&quot;) REFERENCES Protocolo(&quot;ID_Protocolo&quot;),
+	FOREIGN KEY(&quot;ID_Usuario&quot;) REFERENCES Usuario(&quot;ID_Usuario&quot;)	
+);
+CREATE TABLE IF NOT EXISTS Etapa (
+	&quot;nome&quot;	TEXT NOT NULL,
+	&quot;status&quot; CHAR(1) NOT NULL,
+	&quot;ID_Etapa&quot;	INTEGER NOT NULL,
+	&quot;ID_Protocolo&quot;	INTEGER NOT NULL,
+	PRIMARY KEY(&quot;ID_Etapa&quot; AUTOINCREMENT),
+	FOREIGN KEY(&quot;ID_Protocolo&quot;) REFERENCES Protocolo(&quot;ID_Protocolo&quot;)
+);
+CREATE TABLE IF NOT EXISTS Item (
+	&quot;tipo_item&quot;	TEXT NOT NULL,
+	&quot;valor&quot;	TEXT NOT NULL,
+	&quot;status&quot; CHAR(1) NOT NULL,
+	&quot;ID_Item&quot;	INTEGER NOT NULL,
+	&quot;ID_Etapa&quot;	INTEGER NOT NULL,
+	PRIMARY KEY(&quot;ID_Item&quot; AUTOINCREMENT),
+	FOREIGN KEY(&quot;ID_Etapa&quot;) REFERENCES Etapa(&quot;ID_Etapa&quot;)
+);
+CREATE TABLE IF NOT EXISTS Foto (
+    tipo_de_foto TEXT NOT NULL,
+	valor	BLOB NOT NULL,
+    ID_Fotos INTEGER NOT NULL,
+    ID_Etapa INTEGER,
+    PRIMARY KEY(ID_Fotos, ID_Etapa),
+    FOREIGN KEY(ID_Etapa) REFERENCES Etapa(ID_Etapa)
+);
+CREATE UNIQUE INDEX IF NOT EXISTS &quot;pk_Usuario&quot; ON &quot;Usuario&quot; (&quot;ID_Usuario&quot;);
+CREATE UNIQUE INDEX IF NOT EXISTS &quot;pk_Etapa&quot; ON &quot;Etapa&quot; (&quot;ID_Etapa&quot;);
+CREATE UNIQUE INDEX IF NOT EXISTS &quot;pk_Item&quot; ON &quot;Item&quot; (&quot;ID_Item&quot;);
+CREATE UNIQUE INDEX IF NOT EXISTS &quot;pk_Fotos&quot; ON &quot;Foto&quot; (&quot;ID_Fotos&quot;);
+COMMIT;</sql><current_tab id="0"/></tab_sql></sqlb_project>
