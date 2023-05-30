@@ -2,19 +2,15 @@ import { Router } from "express";
 
 const alocacaoRouter = Router();
 
-app.get('/', (req, res) => {
+alocacaoRouter.get('/', async (req, res) => {
     res.statusCode = 200;
     res.setHeader('Access-Control-Allow-Origin', '*');
-    var db = new sqlite3.Database(DBPATH); // Certifique-se de definir o caminho correto para o banco de dados
-    var sql = 'SELECT * FROM Alocacao INNER JOIN Usuario ON Alocacao.ID_Usuario = Usuario.id INNER JOIN Projeto ON Alocacao.ID_Projeto = Projetos.id;';
-    db.all(sql, [], (err, rows) => {
-      if (err) {
-        throw err;
-      }
-      res.json(rows);
-      console.log(rows);
-    });
-    db.close(); // Fecha o banco
+    
+    const sql = 'SELECT * FROM Alocacao INNER JOIN Usuario ON Alocacao.ID_Usuario = Usuario.id INNER JOIN Projeto ON Alocacao.ID_Projeto = Projetos.id;';
+    
+    const response = await query(sql);
+	
+    res.json(response)
   });
 
   export default alocacaoRouter;
