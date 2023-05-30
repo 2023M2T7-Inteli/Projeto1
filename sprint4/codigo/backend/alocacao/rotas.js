@@ -1,5 +1,5 @@
 import { Router } from "express";
-
+import query from "../utils/query.js";
 const alocacaoRouter = Router();
 
 alocacaoRouter.get('/', async (req, res) => {
