@@ -7,11 +7,11 @@ const passwordInput = document.querySelector('#password');
 
 // URLs for login, password, and user type endpoints
 // URL to fetch login data
-const urllogin = '/user/userLogin'; 
+const urllogin = '/usuario/usuarioLogin'; 
 // URL to fetch password data
-const urlsenha = '/user/userPassword';
+const urlsenha = '/usuario/senhaUsuario';
 // URL to fetch user type data 
-const urltipo = '/user/userType'; 
+const urltipo = '/usuario/tipoUsuario'; 
 
 // Variable to track if login is accepted
 let loginAccepted = false; 
