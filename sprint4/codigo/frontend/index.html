@@ -7,33 +7,41 @@
     <meta name="viewport" content="width=device-width" />
     <!-- Importing an external stylesheet (css) file -->
     <link rel="stylesheet" href="css/styleLogin.css">
-    <!-- Page title -->
     <title>Teko Porã</title>
   </head>
   <body>
-    <!-- Login container, where all interactions will take place -->
-    <div class="container">
-      <!-- Login form -->
-      <form>
-        <!-- Container title -->
-        <h1>LOGIN</h1>
-        <!-- Email field label -->
-        <label for="email">EMAIL</label>
+    <!-- Background settings -->
+    <div class="background">
+          <!-- Login frame-->
+      <content id="frame">
+        <!-- Login form -->
+        <form>
+          <h1>Login</h1>
+          <div id="email">
+          <!-- Email field label -->
+          <label class="title" for="email">Email</label>
+        </div>
+
         <!-- Email input field -->
-        <input type="email" id="email" name="email" required>
-        <!-- Password field label -->
-        <label for="password">SENHA</label>
-        <!-- Password input field -->
+        <input type="email" name="email" required>
+
+          <div id="password">
+          <!-- Password field label -->
+          <label class="title" for="password">Senha</label>
+        </div>
+
+        <!-- Email input field -->
         <input type="password" id="password" name="password" required>
-        <!-- Form submit button -->
-        <button type="submit">ENTRAR</button>
-        <!-- Line break -->
         <br>
-        <!-- Button to redirect to the registration page -->
-        <button type="button" class="orangebutton" onclick="window.location.href='../html/signUp.html'">CADASTRAR-SE</button>
-        <!-- Line break -->
-        <br>
+
+        <!-- Buttons settings -->
+        <div class="buttons">
+          <button id="bluebutton" type="submit">Entrar</button>
+          
+          <button id="orangebutton" type="button"  onclick="window.location.href='../html/signUp.html'">Cadastre-se</button>
+        </div>
       </form>
+      </content>
     </div>
     <!-- Importing a script file -->
     <script src="js/scriptLogin.js"></script>

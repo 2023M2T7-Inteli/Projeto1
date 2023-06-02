@@ -1,154 +1,117 @@
-/* Global Style */
+
+@import url('https://fonts.cdnfonts.com/css/nats');
+
 * {
-	box-sizing: border-box;
-	font-family: sans-serif;
+	font-family: 'NATS', sans-serif;	
+	font-size:large;
+	margin: 0;
+	padding: 0;
 }
 
-/* Background Style */
-body::before {
-	color: #3D3D3D;
-	content: "";
-	background-image: url("../images/oranges.jpeg");
-	background-size: cover;
-	background-position: center;
-	filter: blur(4px);
-	position: fixed;
+h1 {
+	font-size: 40px;
+	color: #05401F;
+	padding: 0;
+	margin: 0;
+	line-height: 40px;
+}
+
+
+/* Heading Style */
+.title {
+	color: #05401F;
+	margin-top: 0;
+	font-size: 19px;
+}
+
+.background {
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+}
+
+.background::before {
+	content: '';
+	position: absolute;
 	top: 0;
 	left: 0;
 	width: 100%;
 	height: 100%;
-}  
+	z-index: -1;
+	background-image: url("../images/oranges.jpeg");
+	opacity: 0.7;
+}
 
 /* Reusable Container Style */
-.container,
-.containerInsert{
-	width: 430px;
-	height: auto;
-	background-color: white;
-	border-radius: 20px;
-	padding: 20px;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	text-align: center;
-	justify-content: center;
-	box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.2);
+#frame {
+    padding: 24px;
+	width: 45vw;
+    height: auto;
+    background: #F3F9F1;
+    box-shadow: 13px 13px 14px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
 }
 
-/* Sign Container Style */
-.containerInsert {
-	height: 490px;
-	box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-/* Form Style */
 form {
+	width: 100%;
 	display: flex;
 	flex-direction: column;
 }
 
-/* Heading Style */
-h1 {
-	color: #3D3D3D;
-	margin-top: 0;
-}
-
-/* Label Style */
-label {
-	color: #3D3D3D;
-	margin-left: 10%;
-	display: block;
-	text-align: left;
-}
-
 /* Input Style */
 input {
+	width: 100%;
+	box-sizing: border-box;
+	padding: 8px 16px;
 	color: #3D3D3D;
 	background-color: #C3C3C3;
-	width: 80%;
-	margin-left: 10%;
-	padding: 10px;
-	border: 1px solid #3D3D3D;
+	border: 1px solid #05401F;
 	border-radius: 5px;
-	margin-bottom: 30px;
+	font-size: 14px;
+}
+
+
+button {
+	width: 100%;
+	height: 48px;
+	cursor: pointer;
+	border-radius: 5px;
+	align-items: center;
+	transition: 0.3s all ease-in-out;
+}
+
+.buttons {
+	gap: 16px;
+	width: 100%;
+	display:flex;
+	flex-direction: column;
 }
 
 /* Buttons Style */
-button {
-	margin-left: 15%;
-	width: 70%;
-	background-color: #5297ff;
+#bluebutton {
+	background-color: #4DABE0;
 	color: white;
-	padding: 10px;
-	border: none;
-	border-radius: 5px;
-	cursor: pointer;
+	border: none;	
 }
 
-/* Hover Style for Buttons */
-button:hover {
-	color: white;
-	padding: 10px;
-	border-radius: 5px;
-	cursor: pointer;
-	background-color: #5a8eff63;
-	border: 2px solid #659bff;
-	transition: background-color 0.3s ease; 
+#bluebutton:hover {
+	background-color: #F3F9F1;
+	color: #4DABE0;
+	border: 2px #4DABE0 solid;
 }
 
 /* Orange Button Style */
-.orangebutton {
-	background-color: #BF5D24;
+#orangebutton {
+	background-color: #D38E65;
 	color: white;
-	padding: 10px;
 	border: none;
-	border-radius: 5px;
-	cursor: pointer;
 }
 
-/* Hover Style for Orange Button */
-.orangebutton:hover {
-	color: white;
-	padding: 10px;
-	border-radius: 5px;
-	cursor: pointer;
-	background-color: #bf5d24aa;
-	border: 2px solid #824a2a;
-	transition: background-color 0.3s ease; 
-}
-
-/* Media Query for Cellphone Responsive Design */
-@media only screen and (max-width: 420px) {
-	
-	input {
-		width: 100%;
-		margin-left: 0;
-		margin-bottom: 20px;
-	}
-
-	button {
-		margin-left: 0;
-		width: 100%;
-	}
-
-	.container,
-	.containerInsert {
-		width: 80%;
-		border-radius: 15px;
-		padding: 10px;
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-	}
-
-	.containerInsert {
-		height: auto;
-		padding-bottom: 30px;
-	}
-
-	.orangebutton {
-		margin-bottom: 20px;
-	}
+#orangebutton:hover {
+	background-color: #F3F9F1;
+	color: #D38E65;
+	border: 2px #D38E65 solid;
 }
