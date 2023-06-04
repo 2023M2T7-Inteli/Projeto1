@@ -22,7 +22,7 @@ protocoloRouter.post('/insereProtocolo', async (req, res) => {
 	res.setHeader('Access-Control-Allow-Origin', '*');
 	// Open the database connection
 	// SQL query to insert a new record into the Protocolo table
-	const sql = "INSERT INTO Protocolo (nome) VALUES ('" + req.body.nome + "')";
+	const sql = "INSERT INTO Protocolo (nome, status) VALUES ('" + req.body.nome + "', '" + req.body.status + "')";
 	// Execute the query to insert the new record
 	const response = await query(sql);
 	// End the response
@@ -48,7 +48,7 @@ protocoloRouter.post('/atualizarProtocolo', async (req, res) => {
 	res.statusCode = 200;
 	res.setHeader('Access-Control-Allow-Origin', '*');
 	// SQL query to update a record in the Protocolo table
-	const sql = "UPDATE Protocolo SET nome='" + req.body.nome + "' WHERE ID_Protocolo=" + req.body.ID_Protocolo;
+	const sql = "UPDATE Protocolo SET nome='" + req.body.nome + "', status='" + req.body.status + "' WHERE ID_Protocolo=" + req.body.ID_Protocolo;
 	// Execute the query to update the record
 	const response = await query(sql);
 	
