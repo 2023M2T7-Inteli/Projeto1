@@ -1,4 +1,4 @@
-
+/*nats font import*/
 @import url('https://fonts.cdnfonts.com/css/nats');
 
 * {
@@ -7,7 +7,7 @@
 	margin: 0;
 	padding: 0;
 }
-
+/*sets h1 font size and color (cadastro)*/
 h1 {
 	font-size: 40px;
 	color: #05401F;
@@ -23,7 +23,7 @@ h1 {
 	margin-top: 0;
 	font-size: 19px;
 }
-
+/*styles the element that acts as the background*/
 .background {
 	width: 100%;
 	height: 100vh;
@@ -32,7 +32,7 @@ h1 {
 	justify-content: center;
 	position: relative;
 }
-
+/*positions the background image*/
 .background::before {
 	content: '';
 	position: absolute;
