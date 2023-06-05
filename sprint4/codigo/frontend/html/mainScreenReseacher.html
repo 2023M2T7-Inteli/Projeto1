@@ -12,18 +12,37 @@
     <title>Teko Porã</title>
 </head>
 <body>
-    <div class="top">
-        <!-- title of this section -->
-        <h1 class="titleString">PROTOCOLOS</h1>
-        <h1 class="logo">TP</h1>
+    <!-- This div tag sets the path to get to the image used as our logo -->
+    <div class="logo">
+        <img src="../images/logo-removebg-preview.png">
     </div>
-    <form class="container">
-        <!-- This button will redirect the user to the "newForm.html" page -->
-        <button type="button" onclick="window.location.href='newForm.html'" class="mainButton"><h1 >NOVO</h1></button>
-        <!-- This button will redirect the user to the "ATIVOS" page -->
-        <button class="mainButton"><h1>ATIVOS</h1></button>
-        <!-- This button will redirect the user to the "ATIVOS" page -->
-        <button class="mainButton"><h1>FINALIZADOS</h1></button>
-    </form>
+    <!-- This div tag opens a div with the class "content" -->
+    <div id="content" class="content">
+        <!-- This div tag opens a div with the classes "container-protocolo" and "c-novo" -->
+        <div class="container-protocolo c-novo">
+            <!-- This div tag opens a div with the classes "protocolo" and "prot-novo", where, when you click it, it redirects the user to the "newForm.html" page -->
+            <div id="stageName" onclick=newProtocol() class="protocolo prot-novo">
+                <!-- This div also has a paragraph tag with the text "Protocolo Novo" -->
+                <p> Protocolo Novo </p>
+            </div>
+        </div>
+        <!-- This div tag opens a div with the classes "container-protocolo" and "c-ativo" -->
+        <div class="container-protocolo c-ativo">
+            <!-- This div tag opens a div with the classes "protocolo" and "prot-ativo" -->
+            <div onclick="activeProtocols()" id="stageName" class="protocolo prot-ativo">
+                <!-- This div also has a paragraph tag with the text "Protocolos Ativos" -->
+                <p> Protocolos Ativos </p>
+            </div>
+        </div>
+        <!-- This div tag opens a div with the classes "container-protocolo" and "c-finalizado" -->
+        <div class="container-protocolo c-finalizado">
+            <!-- This div tag opens a div with the classes "protocolo" and "prot-finalizado" -->
+            <div class="protocolo prot-finalizado">
+                <!-- This div also has a paragraph tag with the text "Protocolos Finalizados" -->
+                <p> Protocolos Finalizados </p>
+            </div>
+        </div>
+    </div>
+    <script src="../js/scriptReseacher.js"></script>
 </body>
 </html>

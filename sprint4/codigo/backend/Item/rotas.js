@@ -21,13 +21,12 @@ itemRouter.post('/insereItem', async (req, res) => {
 	res.statusCode = 200;
 	res.setHeader('Access-Control-Allow-Origin', '*');
 	// SQL query to insert a new record into the Item table
-	const sql = "INSERT INTO Item (tipo_item, valor, status) VALUES ('" + req.body.tipo_item + "', '" + req.body.valor + "', '" + req.body.status + "')";
+	const sql = "INSERT INTO Item (valor, ID_Etapa) VALUES ('" + req.body.valor + "', '" + req.body.ID_Etapa + "')";
 	
 	const response = await query(sql);
 	
     res.json(response)
-	// End the response
-	res.end();
+	res.end()
 });
 
 // Retrieve a specific record for updating
@@ -57,7 +56,7 @@ itemRouter.post('/atualizarItem', async (req, res) => {
 });
 
 // Delete a record from the Item table
-itemRouter.get('/removeItem', async (req, res) => {
+itemRouter.post('/removeItem', async (req, res) => {
 	// Set response headers
 	res.statusCode = 200;
 	res.setHeader('Access-Control-Allow-Origin', '*');

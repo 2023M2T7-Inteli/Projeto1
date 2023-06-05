@@ -16,17 +16,17 @@
         <!-- Container title -->
         <h1>CADASTRO</h1>
         <!-- Form for inserting producer information -->
-        <form name="form1" method="post" action="/usuario/insereUsuario">
-            EMAIL: <input type="email" name="email" value="" required>
+        <form method="post" action="/usuario/insereUsuario">
+            EMAIL: <input type="email" id="email" name="email" value="" required>
             <br>
-            SENHA: <input type="password" name="password" value="" required>
+            SENHA: <input type="password" id="password" name="password" value="" required>
             <br>
             TIPO <input type="number" name="type" value="" required>
             <!-- Submit button for form submission -->
             <button type="submit">CADASTRAR-SE</button>
             <br>
             <!-- Button to go back to the index.html page -->
-            <button onclick="window.location.href='../index.html'" class="orangebutton">VOLTAR</button>
+            <button type="button" onclick="window.location.href='../index.html'" class="orangebutton">VOLTAR</button>
         </form>    
     </div>
 </body>

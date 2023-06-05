@@ -2,8 +2,8 @@
 const form = document.querySelector('form');
 
 // Selecting the email and password input elements from the DOM
-const emailInput = document.querySelector('#email');
-const passwordInput = document.querySelector('#password');
+const emailInput = document.querySelector("#email");
+const passwordInput = document.querySelector("#password");
 
 // URLs for login, password, and user type endpoints
 // URL to fetch login data
@@ -72,10 +72,10 @@ form.addEventListener('submit', (event) => {
     if (dataLogin[i] == emailValue) {
       if (dataPassword[i] == passwordValue) {
         // Redirecting based on user type
-        if (dataType[i] == "1") {
+        if (dataType[i] == 1) {
           // Redirect to the main screen for researchers
           window.location.href = "../html/mainScreenReseacher.html";
-        } else if (dataType[i] == "0") {
+        } else if (dataType[i] == 0) {
           // Redirect to the main screen for producers
           window.location.href = "../html/mainScreenProducer.html";
         }

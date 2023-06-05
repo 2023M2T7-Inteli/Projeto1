@@ -1,76 +1,107 @@
-/* Global style */
+@import url('https://fonts.cdnfonts.com/css/nats');
 * {
-	box-sizing: border-box;
+    font-family: 'NATS', sans-serif;
+    font-size: 25px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-
 /* Body style */
 body {
-	background-color: rgba(146, 166, 73, 0.7);
-	background-size: cover;
-	background-position: center;
-	background-attachment: fixed;
-	margin: 0;
-	padding: 0;
-	font-family: sans-serif;
+    background-color: #F3F9F1;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
-
-/* Container style */
-.container {
-	width: 60%;
-	height: 70%;
-	border-radius: 20px;
-	position: absolute;
-	margin-top: 2%;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	text-align: center;
+/* Logo position */
+.logo{
+    position: absolute;
+    right: 0%;
+    top: 0%;
 }
-
-/* Form style */
-form {
-	display: flex;
-	flex-direction: column;
+/* Styles the img element within the logo class */
+.logo > img {
+    width: 72px;
+    height: 72px;
 }
-
-/* Header style */
-.top {
-	display: flex;
-	justify-content: center;
-	flex-direction: row;
+/* Content style */
+.content {
+    margin-top: 5%;
 }
-
-/* Logo style */
-.logo {
-	margin-right: 30px;
-	width: 60px;
-	text-align: center;
-	background-color: rgba(146, 166, 73, 0.7);
-	color: #62110A;
-	border-radius: 15px;
+/* Container-protocolo style */
+.container-protocolo {
+    display: flex;
+    margin-right: 18%;
+    margin-left: 18%;
 }
-
-/* Title style */
-.titleString {
-	margin: auto;
-	color: #05401F;
+/* Protocolo style */
+.protocolo {
+    display: flex;
+    box-sizing: border-box;
+    width: 350px;
+    height: 170px;
+    border: 2px solid #05401F;
+    box-shadow: 13px 13px 14px rgba(0, 0, 0, 0.25);
+    border-radius: 23px;
+    justify-content: center;
+    align-items: center;
 }
-
-/* Main button style */
-.mainButton {
-	background-color: rgba(191, 93, 36, 0.7);
-	color: #05401F;
-	width: auto;
-	height: 22%;
-	border-radius: 5px;
-	cursor: pointer;
-	margin: 3%;
-	border: 2px solid #05401F;
-	box-shadow: 13px 13px 14px rgba(0, 0, 0, 0.25);
+/* Protocolo hover style */
+.protocolo:hover{
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 5px 5px 6px rgba(0, 0, 0, 0.25);
+    color: #F3F9F1;
 }
-
-/* Main button hover style */
-.mainButton:hover {
-	background-color: rgba(191, 93, 36, 0.5);
-	transition: background-color 0.3s ease;
+/* C-novo and C-finalizado style */
+.c-novo, .c-finalizado{
+    justify-content: end;
+}
+/* Prot-novo style */
+.prot-novo {
+    background: #D38E65;
+}
+/* Prot-ativo style */
+.prot-ativo {
+    background: #4DABE0;
+}
+/* Prot-finalizado style */
+.prot-finalizado {
+    background: #95D5B2;
+}
+/* Prot-novo hover style */
+.prot-novo:hover {
+    background-color: #724D3A;
+}
+/* Prot-ativo hover style */
+.prot-ativo:hover {
+    background-color: #2B5D7A;
+}
+/* Prot-finalizado hover style */
+.prot-finalizado:hover {
+    background-color: #364D40;
+}
+/* Changes style for screens with a width of a maximum of 1068 pixels */
+@media only screen and (max-width: 1068px) {
+    .container-protocolo {
+        margin-bottom: 24px;
+    }
+}
+/* Changes style for screens with a width of a maximum of 900 pixels */
+@media only screen and (max-width: 900px) {
+    .container-protocolo {
+        justify-content: center;
+    }
+    .logo {
+        position: relative;
+        justify-content: center;
+        margin-top: 0;
+        display: flex;
+    }
+    .content {
+        margin-top: 0;
+    }
+    .protocolo {
+        height: 156px;
+    }
 }

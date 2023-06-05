@@ -59,7 +59,7 @@ usuarioRouter.post('/insereUsuario', async (req, res) => {
     res.statusCode = 200;
     res.setHeader('Access-Control-Allow-Origin', '*');
     
-    const sql = "INSERT INTO Usuario (login, senha, tipo) VALUES ('" + req.body.login + "', '" + req.body.senha + "', '" + req.body.tipo + "')";
+    const sql = "INSERT INTO Usuario (login, senha, tipo) VALUES ('" + req.body.email + "', '" + req.body.password + "', '" + req.body.type + "')";
     
     const response = await query(sql);
 

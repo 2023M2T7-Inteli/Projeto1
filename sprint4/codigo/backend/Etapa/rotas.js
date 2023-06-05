@@ -7,7 +7,6 @@ etapaRouter.get('/', async (req, res) => {
 	// Set response headers
 	res.statusCode = 200;
 	res.setHeader('Access-Control-Allow-Origin', '*');
-
 	const sql = 'SELECT * FROM Etapa';
 	// Execute the query and return the results as JSON
 	const response = await query(sql);
@@ -20,14 +19,24 @@ etapaRouter.post('/insereEtapa', async (req, res) => {
 	// Set response headers
 	res.statusCode = 200;
 	res.setHeader('Access-Control-Allow-Origin', '*');
-	// SQL query to insert a new record into the Etapa table
-	const sql = "INSERT INTO Etapa (nome, status) VALUES ('" + req.body.nome + "', '" + req.body.status + "')";
+	// SQL query to insert a new record into the Etapa table	
+	const sql = "INSERT INTO Etapa (nome, status, ID_Protocolo) VALUES ('" + req.body.nome + "', '" + req.body.status + "', '" + req.body.ID_Protocolo + "')";
 	// Execute the query to insert the new record
+	const response = await query(sql);
+		// End the response
+    res.redirect("/html/newForm.html?id=" + req.body.ID_Protocolo)
+});
+
+etapaRouter.get('/alocaItem', async(req, res) => {
+	// Set response headers
+	res.statusCode = 200;
+	res.setHeader('Access-Control-Allow-Origin', '*');
+	// SQL query to delete a record from the Etapa table
+	const sql = 'SELECT * FROM Etapa INNER JOIN Item ON Etapa.ID_Item = Item.id';
+
 	const response = await query(sql);
 	
     res.json(response)
-	// End the response
-	res.end();
 });
 
 // Retrieve a specific record for updating
@@ -57,7 +66,7 @@ etapaRouter.post('/atualizarEtapa', async (req, res) => {
 });
 
 // Delete a record from the Etapa table
-etapaRouter.get('/removeEtapa', async(req, res) => {
+etapaRouter.post('/removeEtapa', async(req, res) => {
 	// Set response headers
 	res.statusCode = 200;
 	res.setHeader('Access-Control-Allow-Origin', '*');

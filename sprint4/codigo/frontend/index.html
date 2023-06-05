@@ -17,30 +17,26 @@
         <!-- Login form -->
         <form>
           <h1>Login</h1>
-          <div id="email">
-          <!-- Email field label -->
-          <label class="title" for="email">Email</label>
-        </div>
+          <div class="email">
+            <!-- Email field label -->
+            <label class="title" for="email">Email</label>
+          </div>
+          <!-- Email input field -->
+          <input id="email" type="email" name="email" required>
 
-        <!-- Email input field -->
-        <input type="email" name="email" required>
-
-          <div id="password">
-          <!-- Password field label -->
-          <label class="title" for="password">Senha</label>
-        </div>
-
-        <!-- Email input field -->
-        <input type="password" id="password" name="password" required>
-        <br>
-
-        <!-- Buttons settings -->
-        <div class="buttons">
-          <button id="bluebutton" type="submit">Entrar</button>
-          
-          <button id="orangebutton" type="button"  onclick="window.location.href='../html/signUp.html'">Cadastre-se</button>
-        </div>
-      </form>
+          <div class="password">
+            <!-- Password field label -->
+            <label class="title" for="password">Senha</label>
+          </div>
+          <!-- Email input field -->
+          <input type="password" id="password" name="password" required>
+          <br>
+         <!-- Buttons settings -->
+          <div class="buttons">
+            <button id="bluebutton" type="submit">Entrar</button>
+            <button id="orangebutton" type="button" onclick="window.location.href='../html/signUp.html'">Cadastre-se</button>
+          </div>
+        </form>
       </content>
     </div>
     <!-- Importing a script file -->
