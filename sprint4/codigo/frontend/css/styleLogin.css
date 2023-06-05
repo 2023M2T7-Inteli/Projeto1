@@ -16,7 +16,6 @@ h1 {
 	line-height: 40px;
 }
 
-
 /* Heading Style */
 .title {
 	color: #05401F;
@@ -46,7 +45,7 @@ h1 {
 }
 
 /* Reusable Container Style */
-#frame {
+.frame {
     padding: 24px;
 	width: 45vw;
     height: auto;
@@ -85,26 +84,26 @@ button {
 }
 
 /* Buttons Style */
-#bluebutton {
+.bluebutton {
 	background-color: #4DABE0;
 	color: white;
 	border: none;	
 }
 
-#bluebutton:hover {
+.bluebutton:hover {
 	background-color: #F3F9F1;
 	color: #4DABE0;
 	border: 2px #4DABE0 solid;
 }
 
 /* Orange Button Style */
-#orangebutton {
+.orangebutton {
 	background-color: #D38E65;
 	color: white;
 	border: none;
 }
 
-#orangebutton:hover {
+.orangebutton:hover {
 	background-color: #F3F9F1;
 	color: #D38E65;
 	border: 2px #D38E65 solid;

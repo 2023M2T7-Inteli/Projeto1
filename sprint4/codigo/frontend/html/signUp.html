@@ -12,22 +12,45 @@
     <title>Teko Porã</title>
 </head>
 <body>
-    <div class="containerInsert">
+    <div class="background">
         <!-- Container title -->
-        <h1>CADASTRO</h1>
-        <!-- Form for inserting producer information -->
-        <form method="post" action="/usuario/insereUsuario">
-            EMAIL: <input type="email" id="email" name="email" value="" required>
-            <br>
-            SENHA: <input type="password" id="password" name="password" value="" required>
-            <br>
-            TIPO <input type="number" name="type" value="" required>
-            <!-- Submit button for form submission -->
-            <button type="submit">CADASTRAR-SE</button>
-            <br>
-            <!-- Button to go back to the index.html page -->
-            <button type="button" onclick="window.location.href='../index.html'" class="orangebutton">VOLTAR</button>
-        </form>    
+        <div class="frame">
+            <!-- Form for inserting producer information -->
+            <form method="post" action="/usuario/insereUsuario">
+                <h1>Cadastro</h1>
+
+                <div class="email">
+                    <label class="title" for="email">Email</label>
+                </div>
+
+                <input type="email" id="email" name="email" value="" required>
+
+
+                <div class="password">
+                    <label class="title" for="password" name="senha">Senha</label>
+                </div>
+
+                <input type="text" id="password" name="password" value="" required>
+
+                <br>
+
+                <div> 
+                    <label class="title" for="usuario">Usuario: 1 para pesquisador, 2 para produtor.</label>
+                </div>
+
+                <input type="number" name="usuario" value="" required>
+                <br>
+                
+                <div class="buttons">
+                    
+                    <!-- Submit button for form submission -->
+                    <button type="submit" class="bluebutton">Cadastrar-se</button>
+                    <br>
+                    <!-- Button to go back to the index.html page -->
+                    <button class="orangebutton" type="button" onclick="window.location.href='../index.html'" class="orangebutton">Voltar</button>
+                </div>
+            </form>
+        </div>
     </div>
 </body>
 </html>
