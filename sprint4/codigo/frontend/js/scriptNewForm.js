@@ -6,6 +6,7 @@ const protocolNameUrl = '/protocolo/';
 const userSentUrl = '/enviar/'
 
 let currentUrl = window.location.href
+let correctName = false
 let containerStructure = [];
 let userSent = []
 let protocolName;
@@ -65,16 +66,17 @@ window.onload = function() {
   newParagraph.innerHTML = leftBar.join('');
 };
 
-
 fetch(protocolNameUrl)
   .then((response) => response.json())
   .then((data) => {
     protocolId = urlParams.get("id");
     for (let i = 0; i < data.length; i++) {
-      if (data[i].ID_Protocolo == protocolId) {
+      if (data[i].ID_Protocolo ==  protocolId) {
         protocolName = data[i].nome;
-      } else{
-        protocolName = data[data.length -1].nome
+        correctName = true
+      }
+      else if (correctName == false){
+        protocolName = data[data.length -1].nome;
       }
     }
     const newParagraph = document.getElementById("protocolname");

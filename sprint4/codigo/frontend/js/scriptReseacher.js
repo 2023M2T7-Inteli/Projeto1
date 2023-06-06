@@ -4,6 +4,7 @@ const mainContainer = `<div id="container"></div>`
 let protocolsList = []
 let protocolsListID = []
 let activeProtocolsList = [`<h1 class="titleString">ATIVOS</h1>`]
+let finishedProtocolsList = [`<h1 class="titleString">FINALIZADOS</h1>`]
 
 fetch(protocolNameUrl)
   .then((response) => response.json())
@@ -48,3 +49,4 @@ function getProtocol(button) {
   const protocolID = button.value;
   window.location.href = "../html/newForm.html?id=" + protocolID;
 }
+
