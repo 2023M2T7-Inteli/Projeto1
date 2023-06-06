@@ -67,6 +67,7 @@ form.addEventListener('submit', (event) => {
   const emailValue = emailInput.value;
   const passwordValue = passwordInput.value;
 
+
   // Checking login credentials against stored data
   for (let i = 0; i < dataLogin.length; i++) {
     if (dataLogin[i] == emailValue) {
