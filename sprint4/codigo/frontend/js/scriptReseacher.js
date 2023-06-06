@@ -1,4 +1,5 @@
 const protocolNameUrl = '/protocolo/'; 
+const mainContainer = `<div id="container"></div>`
 
 let protocolsList = []
 let protocolsListID = []
@@ -18,8 +19,9 @@ fetch(protocolNameUrl)
 
 function newProtocol(){
   const textNewProtocol = `<form id="container" name="formNewForm" method="post" action="/protocolo/insereProtocolo">
-  <input name="nome" id="stageName" class="container-protocolo" type="text" placeholder="Nome do novo protocolo" required>
-  <input type="text" class="container-protocolo" name="status" placeholder="Status do novo protocolo">
+  <h1 class="titleString">CRIAR NOVO PROTOCOLO</h1>
+  <input name="nome" id="stageName" class="inputProtocol" type="text" placeholder="Nome do novo protocolo" required>
+  <input type="text" class="inputProtocol" name="status" placeholder="Status do novo protocolo">
   <button class="nextButton" type="submit">Criar</button>
   </form>`
   // Defines a constant to store the ID of the structure that will receive the div
@@ -29,14 +31,16 @@ function newProtocol(){
 }
 
 function activeProtocols() {
+  const newParagraph = document.getElementById('content');
+  newParagraph.innerHTML = mainContainer;
+
   for (let i = 0; i < protocolsList.length; i++) {
     const textNewProtocol = `<button onclick="getProtocol(this)" class="mainButton" value="${protocolsListID[i]}">${protocolsList[i]}</button>`;
     activeProtocolsList.push(textNewProtocol);
-    
     // Defines a constant to store the ID of the structure that will receive the div
-    const newParagraph = document.getElementById('content');
+    const containerSelect = document.getElementById('container');
     // Appends each value in the "stagesList" list to the HTML
-    newParagraph.innerHTML = activeProtocolsList.join('');
+    containerSelect.innerHTML = activeProtocolsList.join('');
   }
 }
 

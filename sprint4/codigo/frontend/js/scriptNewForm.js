@@ -3,8 +3,11 @@ const urlEtapas = '/etapa/';
 const urlItem = '/item/';
 const buttonSend = `<button class="buttonSend" type="submit"></button>`;
 const protocolNameUrl = '/protocolo/';
+const userSentUrl = '/enviar/'
 
+let currentUrl = window.location.href
 let containerStructure = [];
+let userSent = []
 let protocolName;
 let protocolId = urlParams.get("id");
 let stageID = urlParams.get("idStage");
@@ -18,6 +21,7 @@ let leftBar = [`<h1>ITENS</h1>`, `<form method="post" action="/item/insereItem" 
 </div>'>
 <input type="hidden" name="ID_Etapa" value="${stageID}">
 <input type="hidden" name="ID_Protocolo" value="${protocolId}">
+<input type="hidden" name="currentUrl" value="${currentUrl}">
 <button onclick="addName()" type="submit" class="addIcon">+</button>
 </form>`, `<form method="post" action="/item/insereItem" class="myButton">
 <p>DATA</p>
@@ -28,6 +32,7 @@ let leftBar = [`<h1>ITENS</h1>`, `<form method="post" action="/item/insereItem" 
   </div>'>
   <input type="hidden" name="ID_Etapa" value="${stageID}">
   <input type="hidden" name="ID_Protocolo" value="${protocolId}">
+  <input type="hidden" name="currentUrl" value="${currentUrl}">
 <button onclick=addDate() type="submit" class="addIcon">+</button>
 </form>`, `<form method="post" action="/item/insereItem" class="myButton">
 <p>LOCAL</p>
@@ -38,6 +43,7 @@ let leftBar = [`<h1>ITENS</h1>`, `<form method="post" action="/item/insereItem" 
 </div>'>
 <input type="hidden" name="ID_Etapa" value="${stageID}">
 <input type="hidden" name="ID_Protocolo" value="${protocolId}">
+<input type="hidden" name="currentUrl" value="${currentUrl}">
 <button onclick=addLocal() type="submit" class="addIcon">+</button>
 </form>`, `<form method="post" action="/item/insereItem" class="myButton">
 <p>FOTO</p>
@@ -48,6 +54,7 @@ let leftBar = [`<h1>ITENS</h1>`, `<form method="post" action="/item/insereItem" 
   </div>'>
   <input type="hidden" name="ID_Etapa" value="${stageID}">
   <input type="hidden" name="ID_Protocolo" value="${protocolId}">
+  <input type="hidden" name="currentUrl" value="${currentUrl}">
 <button onclick=addPhoto() type="submit" class="addIcon">+</button>
 </form>`];
 let stagesList = [`<div class="titleStages"><h1>ETAPAS</h1><span onclick="addStage()" class="addIconStage">+</span></div>`];
@@ -66,6 +73,8 @@ fetch(protocolNameUrl)
     for (let i = 0; i < data.length; i++) {
       if (data[i].ID_Protocolo == protocolId) {
         protocolName = data[i].nome;
+      } else{
+        protocolName = data[data.length -1].nome
       }
     }
     const newParagraph = document.getElementById("protocolname");
@@ -151,18 +160,51 @@ function showPreview() {
 }
 
 //Function that creates a div in the HTML for the researcher to customize how many stages the protocol will be able to
+
 function addStage() {
   // Creates a constant that stores the structure to be added to the HTML
-  const createStageText = `<form id="myContainer" class="myButton" name="putStage" method="post" action="/etapa/insereEtapa">
-  NOME: <input type="text" name="nome" value="" required>
+  const createStageText = `<form id="myContainer" class="myButtonNew" name="putStage" method="post" action="/etapa/insereEtapa">
+  NOME: <input class="inputStage" type="text" name="nome" value="" required>
   <br>
-  ATIVO: <input type="number" name="status" value="" required>
+  ATIVO: <input class="inputStage" type="number" name="status" value="" required>
   <br>
   <input type="hidden" name="ID_Protocolo" value="${protocolId}">
-  <button type="submit">ENVIAR</button>
+  <button class="buttonStage" type="submit">ENVIAR</button>
   </form>`
   stagesList.push(createStageText)
   // Defines a constant to store the ID of the structure that will receive the div
   const newParagraph = document.getElementById('stageContainer')
   newParagraph.innerHTML = stagesList.join('');
+}
+
+function sendProducer(){
+  const textNewProtocol = `<form class="sendProducerForm" id="container" method="post" action="/enviar/insereEnviar">
+  <h1 class="titleString">Enviar Para:</h1>
+  <input name="ID_Usuario" id="stageName" class="inputProtocol" type="text" placeholder="ID do produtor" required>
+  <input name="ID_Protocolo" type="hidden" value="${protocolId}">
+  <input name="ID_Envio" type="hidden" value="${protocolId}">
+  <input name="currentUrl" type="hidden" value="${currentUrl}">
+  <button class="buttonSendProducer" type="submit">Enviar</button>
+  </form>`
+  // Defines a constant to store the ID of the structure that will receive the div
+  const newParagraph = document.getElementById('main')
+  // Appends each value in the "stagesList" list to the HTML
+  newParagraph.innerHTML = textNewProtocol;
+
+  
+  fetch(userSentUrl)
+  .then((response) => response.json())
+  .then((data) => {
+    protocolId = urlParams.get("id");
+    for (let i = 0; i < data.length; i++) {
+      if (data[i].ID_Protocolo == protocolId) {
+        userSent.push(`<div class="buttonUserSent">Usuário : ${data[i].ID_Usuario}</div>`)
+      }
+    }
+    const newParagraphReceived = document.getElementById('producerReceived')
+    newParagraphReceived.innerHTML = userSent.join('');
+  })
+  .catch((error) => {
+    console.error('An error occurred while fetching protocol name:', error);
+  });  
 }

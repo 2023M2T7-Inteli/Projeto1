@@ -1,13 +1,15 @@
-/* Global Style */
+@import url('https://fonts.cdnfonts.com/css/nats');
 /* Set the font family for all elements */
 * {
-  font-family: sans-serif;
+  font-family: 'NATS', sans-serif;	
+  margin: 0 auto;
+  text-align: center;
 }
 
 /* Background Style */
 /* Set the background color and positioning */
 body {
-  background-color: rgba(146, 166, 73, 0.7);
+  background-color: #F3F9F1;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -17,7 +19,7 @@ body {
 
 /* Heading Style */
 h1 {
-  color: aliceblue;
+  color: 05401F;
   text-align: center;
 }
 
@@ -48,18 +50,20 @@ p {
 /* Middle Section */
 /* Styling for the middle section */
 .middle {
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: #d0d3c1;
+  border: 1px solid #3D3D3D;
   height: auto;
   align-items: center;
 }
 
 /* Button Style */
 /* Styling for the buttons */
+.myButtonNew,
 .myButton {
   width: 96%;
   height: 10%;
   position: relative;
-  background: rgba(191, 93, 36, 0.7);
+  background: #95D5B2;
   border: 1px solid #05401F;
   border-radius: 10px;
   color: #05401F;
@@ -80,7 +84,7 @@ p {
   border: 1px solid #05401F;
   width: 32px;
   height: 32px;
-  background-color: #b94d0fd6;
+  background-color: #7ab193;
   border-radius: 50%;
   font-size: 20px;
   text-align: center;
@@ -108,9 +112,35 @@ p {
 /* Title for Stages */
 /* Align the title for stages */
 .titleStages {
-  align-items: center;
+  width: 33.3%;
   display: flex;
+}
+
+.inputStage{
+  width: 70%;
+  height: 18px;
+  border-radius: 5px;
+}
+
+.buttonUserSent,
+.buttonStage{
+  background: #4DABE0;
+  border: 2px solid #05401F;
+  border-radius: 15px;
   justify-content: center;
+  align-items: center;
+}
+
+.buttonUserSent{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 200px;
+  height: 30px;
+}
+
+.myButtonNew{
+  height: auto;
+  padding-bottom: 10px;
 }
 
 /* Photo Section, Name Section, Date Section, Local Section */
@@ -122,7 +152,7 @@ p {
   border-radius: 8px;
   width: 96%;
   height: auto;
-  background: #c3c3c3;
+  background: #E7EBD7;
   margin-left: 2%;
   margin-top: 2%;
   margin-bottom: 2%;
@@ -210,6 +240,51 @@ p {
 .protocolName::placeholder,
 .inputStageName::placeholder {
   color: #05401F;
+}
+
+.buttonSendProducer,
+.buttonSend{
+  background: #4DABE0;
+  width: 90px;
+  margin: 20px;
+  border: 2px solid #05401F;
+  box-shadow: 13px 13px 14px rgba(0, 0, 0, 0.25);
+  border-radius: 23px;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttonSendProducer:hover,
+.buttonUserSent:hover,
+.buttonSend:hover{
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 5px 5px 6px rgba(0, 0, 0, 0.25);
+  color: #F3F9F1;
+  background-color: #2B5D7A;
+}
+
+.sendProducerForm{
+  display: flex;
+  flex-direction: column;
+}
+
+.inputProtocol{
+  width: 40%;
+  height: 30px;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+.buttonSendProducer{
+  margin: 0 auto;
+}
+
+#producerReceived{
+  display: flex;
+  flex-direction: column;
 }
 
 /* Map Style */

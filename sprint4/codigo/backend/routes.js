@@ -8,12 +8,16 @@ import protocoloRouter from "./Protocolo/rotas.js";
 import fotoRouter from "./Foto/rotas.js";
 import alocacaoRouter from "./alocacao/rotas.js";
 import usuarioRouter from "./Usuario/rotas.js";
+import enviarRouter from "./Enviar/rotas.js";
+
 /* Router creation */
 const routes = Router();
 
 // Specific routers for different routes
 
 routes.use("/usuario", usuarioRouter);
+
+routes.use("/enviar", enviarRouter);
 
 routes.use("/etapa", etapaRouter);
 // The "etapaRouter" is used for handling requests to the "/etapa" route, this router handles operations related to "Etapa" (stage)

@@ -9,14 +9,25 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v7.3.0/ol.css">
   </head>
   <body>
+
     <header class="top">
       <h1 id="protocolname"></h1>
     </header>
-    <div id="leftBar" class="section left"></div>
-    <div id="myContainer" class="section middle"></div>   
-    <div class="section right" id= "stageContainer">
-      <div class="titleStages"></div>
+    <div id="main">
+      <div id="leftBar" class="section left"></div>
+      <div id="myContainer" class="section middle"></div>   
+      <div class="section right" id= "stageContainer">
+        <div class="titleStages"></div>
+      </div>
+      <footer>
+        <button onclick="sendProducer()" class="buttonSend">
+          <p>Enviar</p>
+        </button>
     </div>
+    <br>
+    <h1 class="titleString">Enviados:</h1>
+    <div id="producerReceived"></div>
+    </footer>
     <!-- This script tag includes the OpenLayers library from a CDN -->
     <script src="https://cdn.jsdelivr.net/npm/ol@v7.3.0/dist/ol.js"></script>
     <!-- This script tag links an external JavaScript file -->

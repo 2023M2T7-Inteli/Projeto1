@@ -25,8 +25,7 @@ itemRouter.post('/insereItem', async (req, res) => {
 	
 	const response = await query(sql);
 	
-    res.json(response)
-	res.end()
+    res.redirect(req.body.currentUrl)
 });
 
 // Retrieve a specific record for updating
