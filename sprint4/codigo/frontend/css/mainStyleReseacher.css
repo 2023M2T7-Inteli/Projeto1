@@ -15,7 +15,6 @@ body {
 }
 
 
-
 /* Logo position */
 .logo{
     position: absolute;
@@ -32,19 +31,22 @@ body {
     display: flex;
     flex-direction: column;
     margin-top: 5%;
+    width: 100%;
 }
+
 /* Container-protocolo style */
 .container-protocolo {
     display: flex;
     margin-right: 18%;
     margin-left: 18%;
+    display: grid;
 }
 /* Protocolo style */
 .protocolo {
     display: flex;
     box-sizing: border-box;
-    width: 350px;
-    height: 170px;
+    width: 250px;
+    height: 150px;
     border: 2px solid #05401F;
     box-shadow: 13px 13px 14px rgba(0, 0, 0, 0.25);
     border-radius: 23px;
@@ -164,3 +166,4 @@ body {
         height: 156px;
     }
 }
+
