@@ -294,3 +294,22 @@ p {
   margin: 0 auto;
   margin-top: 10px;
 }
+#home-link {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  display: inline-block;
+}
+
+.home-icon {
+  width: 50px;
+  height: 50px;
+  fill: #3cb371; /* verde um pouco mais escuro */
+  stroke: black; /* borda preta */
+  stroke-width: 0.5; /* espessura da borda */
+}
+
+#home-link:hover .home-icon {
+  fill: #2e8b57; /* verde ainda mais escuro */
+}
+
