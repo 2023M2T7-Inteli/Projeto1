@@ -13,7 +13,7 @@ let protocolName;
 let protocolId = urlParams.get("id");
 let stageID = urlParams.get("idStage");
 let itemList = [];
-let leftBar = [`<h1>ITENS</h1>`, `<form method="post" action="/item/insereItem" class="myButton">
+let leftBar = [`<h1>ITENS</h1>`, `<p>(Selecione o item que deseja adicionar ao protocolo)</p>`, `<form method="post" action="/item/insereItem" class="myButton">
 <p>NOME</p>
 <input name="valor" type="hidden" value='<div class="nameSection" id="nameSection">
   <button class="deleteButton">-</button>
@@ -58,12 +58,10 @@ let leftBar = [`<h1>ITENS</h1>`, `<form method="post" action="/item/insereItem" 
   <input type="hidden" name="currentUrl" value="${currentUrl}">
 <button onclick=addPhoto() type="submit" class="addIcon">+</button>
 </form>`];
-let stagesList = [`<div class="titleStages"><h1>ETAPAS</h1><span onclick="addStage()" class="addIconStage">+</span></div>`];
+let stagesList = [`<div class="titleStages"><h1>ETAPAS</h1><span onclick="addStage()" class="addIconStage">+</span></div>`, `<p>(Selecione a etapa que deseja adicionar ao protocolo)</p>`];
 
 window.onload = function() {
   stageID = urlParams.get("idStage");
-  const newParagraph = document.getElementById('leftBar')
-  newParagraph.innerHTML = leftBar.join('');
 };
 
 fetch(protocolNameUrl)
@@ -96,6 +94,11 @@ fetch(urlEtapas)
       }
     }
     newParagraph.innerHTML = stagesList.join('');
+
+    if (stagesList.length > 2){
+      const newParagraphLeft = document.getElementById('leftBar')
+      newParagraphLeft.innerHTML = leftBar.join('');
+    }
   })
   .catch((error) => {
     console.error('An error occurred while fetching stages data:', error);
