@@ -241,7 +241,7 @@ p {
 .inputStageName::placeholder {
   color: #05401F;
 }
-
+/* buttonSend Style */
 .buttonSendProducer,
 .buttonSend{
   background: #4DABE0;
@@ -253,7 +253,7 @@ p {
   justify-content: center;
   align-items: center;
 }
-
+/* buttonSend Style */
 .buttonSendProducer:hover,
 .buttonUserSent:hover,
 .buttonSend:hover{
@@ -263,12 +263,12 @@ p {
   color: #F3F9F1;
   background-color: #2B5D7A;
 }
-
+/* sendProducerForm Style */
 .sendProducerForm{
   display: flex;
   flex-direction: column;
 }
-
+/* inputProtocol Style */
 .inputProtocol{
   width: 40%;
   height: 30px;
@@ -277,11 +277,11 @@ p {
   margin-bottom: 20px;
   border-radius: 5px;
 }
-
+/* buttonSendProducer Style */
 .buttonSendProducer{
   margin: 0 auto;
 }
-
+/* producerReceived Style */
 #producerReceived{
   display: flex;
   flex-direction: column;
@@ -294,13 +294,14 @@ p {
   margin: 0 auto;
   margin-top: 10px;
 }
+/* home-link Style */
 #home-link {
   position: fixed;
   top: 20px;
   left: 20px;
   display: inline-block;
 }
-
+/* home-icon Style */
 .home-icon {
   width: 50px;
   height: 50px;
@@ -308,7 +309,7 @@ p {
   stroke: black; /* borda preta */
   stroke-width: 0.5; /* espessura da borda */
 }
-
+/* home-link Style */
 #home-link:hover .home-icon {
   fill: #2e8b57; /* verde ainda mais escuro */
 }

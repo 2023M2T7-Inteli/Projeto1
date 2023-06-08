@@ -88,19 +88,19 @@ body {
 .prot-finalizado:hover {
     background-color: #364D40;
 }
-
+/*titleString style*/
 .titleString{
     font-size: 45px;
     text-align: center;
 }
-
+/*container style*/
 #container{
     display: flex;
     flex-direction: column;
     margin: 0 auto;
     width: 800px;
 }
-
+/*mainButton style*/
 .nextButton,
 .mainButton{
     background: #4DABE0;
@@ -112,7 +112,7 @@ body {
     justify-content: center;
     align-items: center;
 }
-
+/*.mainButton style*/
 .nextButton:hover,
 .mainButton:hover{
     cursor: pointer;
@@ -121,13 +121,13 @@ body {
     color: #F3F9F1;
     background-color: #2B5D7A;
 }
-
+/*mainButton style*/
 .nextButton{
     margin: 0 auto;
     margin-top: 40px;
     width: 300px;
 }
-
+/*inputProtocol style*/
 .inputProtocol {
     margin: 0 auto;
     margin-top: 20px;

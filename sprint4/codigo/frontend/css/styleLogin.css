@@ -44,7 +44,7 @@ h1 {
 	opacity: 0.7;
 }
 
-/* Reusable Container Style */
+/* frame Style */
 .frame {
     padding: 24px;
 	width: 45vw;
@@ -53,7 +53,7 @@ h1 {
     box-shadow: 13px 13px 14px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
 }
-
+/* form Style */
 form {
 	width: 100%;
 	display: flex;
@@ -72,7 +72,7 @@ input {
 	font-size: 14px;
 }
 
-
+/* Orange Button Style */
 button {
 	width: 100%;
 	height: 48px;
@@ -83,13 +83,13 @@ button {
 	margin-bottom: 20px;
 }
 
-/* Buttons Style */
+/* Blue Buttons Style */
 .bluebutton {
 	background-color: #4DABE0;
 	color: white;
 	border: none;	
 }
-
+/* Blue Button Style */
 .bluebutton:hover {
 	background-color: #F3F9F1;
 	color: #4DABE0;
@@ -102,7 +102,7 @@ button {
 	color: white;
 	border: none;
 }
-
+/* Orange Button Style */
 .orangebutton:hover {
 	background-color: #F3F9F1;
 	color: #D38E65;
