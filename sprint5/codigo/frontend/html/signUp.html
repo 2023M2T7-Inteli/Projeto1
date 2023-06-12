@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!-- This line sets the language of the HTML document to Brazilian Portuguese (pt-BR) -->
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <!--This meta tag specifies the version of the browser to be used -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Importing an external stylesheet (css) file -->
+    <link rel="stylesheet" href="../css/styleLogin.css">
+    <!-- This line sets the title of the web page to "Teko Porã" -->
+    <title>Teko Porã</title>
+</head>
+<body>
+    <div class="background">
+        <!-- Container title -->
+        <div class="frame">
+            <!-- Form for inserting producer information -->
+            <form method="post" action="/usuario/insereUsuario">
+                <!-- A heading for the form. -->
+                <h1>Cadastro</h1>
+            
+                <!-- Label for the email input field. -->
+                <div class="email">
+                    <label class="title" for="email">Email</label>
+                </div>
+            
+                <!-- Input field for email, with the required attribute to make input mandatory. -->
+                <input type="email" id="email" name="email" value="" required>
+            
+                <!-- Label for the password input field. -->
+                <div class="password">
+                    <label class="title" for="password" name="senha">Senha</label>
+                </div>
+            
+                <!-- Input field for password, with the required attribute to make input mandatory. -->
+                <input type="text" id="password" name="password" value="" required>
+            
+                <br>
+            
+                <!-- Label for the type input field. -->
+                <div> 
+                    <label class="title" for="type">Usuario: 1 para pesquisador, 0 para produtor.</label>
+                </div>
+            
+                <!-- Input field for type, with the required attribute to make input mandatory. -->
+                <input id="type" type="number" name="type" value="" required>
+                <br>
+                
+                <!-- Div to hold buttons. -->
+                <div class="buttons">
+                    
+                    <!-- Submit button for the form. -->
+                    <button type="submit" class="bluebutton">Cadastrar-se</button>
+                    <br>
+            
+                    <!-- Button to redirect to index.html page. -->
+                    <button class="orangebutton" type="button" onclick="window.location.href='../index.html'" class="orangebutton">Voltar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <!-- This line sets the title of the web page to "Teko Porã" -->
+    <title>Teko Porã</title>
+    <!-- Importing an external stylesheet (css) file -->
+    <link rel="stylesheet" href="../css/newFormStyle.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v7.3.0/ol.css">
+  </head>
+  <body>
+    <!-- The home-link anchor that leads to mainScreenReseacher.html when clicked. -->
+    <!-- An SVG image of a home icon is included within the anchor tag. -->
+    <a href="mainScreenReseacher.html" id="home-link">
+      <svg class="home-icon" xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" viewBox="0 0 16 16">
+        <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5Z"/>
+      </svg>
+    </a>
+
+    <!-- Header containing a h1 element with the id protocolname, text will likely be injected using JavaScript -->
+    <header class="top">
+      <h1 id="protocolname"></h1>
+    </header>
+
+    <!-- Main content area -->
+    <div id="main">
+      <!-- Section to the left of the main content -->
+      <div id="leftBar" class="section left"></div>
+      
+      <!-- Middle section of the main content -->
+      <div id="myContainer" class="section middle"></div>  
+      
+      <!-- Section to the right of the main content with the id of stageContainer -->
+      <div class="section right" id= "stageContainer">
+        <!-- Title of the stages -->
+        <div class="titleStages"></div>
+      </div>
+      
+      <!-- Footer section with a button, which when clicked, calls the sendProducer function -->
+      <footer>
+        <button onclick="sendProducer()" class="buttonSend">
+          <p>Enviar</p>
+        </button>
+    </div>
+    <br>
+    <h1 class="titleString">Enviados:</h1>
+    <div id="producerReceived"></div>
+    </footer>
+    <!-- This script tag includes the OpenLayers library from a CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/ol@v7.3.0/dist/ol.js"></script>
+    <!-- This script tag links an external JavaScript file -->
+    <script src="../js/scriptNewForm.js"></script>
+  </body>
+</html> 

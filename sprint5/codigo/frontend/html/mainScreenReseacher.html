@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!-- This line sets the language of the HTML document to Brazilian Portuguese (pt-BR) -->
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <!--This meta tag specifies the version of the browser to be used -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Importing an external stylesheet (css) file -->
+    <link rel="stylesheet" href="../css/mainStyleReseacher.css">
+    <!-- This line sets the title of the web page to "Teko Porã" -->
+    <title>Teko Porã</title>
+</head>
+<body>
+    <!-- This div tag sets the path to get to the image used as our logo -->
+    <div class="logo">
+        <img src="../images/logo-removebg-preview.png">
+    </div>
+
+    <!-- This div tag opens a div with the class "content" -->
+    <div id="content" class="content">
+        <!-- This div tag opens a div with the classes "container-protocolo" and "c-novo" -->
+        <div class="container-protocolo c-novo">
+
+                <!-- This div tag opens a div with the classes "protocolo" and "prot-novo", where, when you click it, it redirects the user to the "newForm.html" page -->
+                <div id="stageName" onclick=newProtocol() class="protocolo prot-novo">
+                    <!-- This div also has a paragraph tag with the text "Protocolo Novo" -->
+                    <p> Protocolo Novo </p>
+                </div>
+        </div>
+    
+            <!-- This div tag opens a div with the classes "container-protocolo" and "c-ativo" -->
+            <div class="container-protocolo c-ativo">
+                <!-- This div tag opens a div with the classes "protocolo" and "prot-ativo" -->
+                <div onclick="activeProtocols()" id="stageName" class="protocolo prot-ativo">
+                    <!-- This div also has a paragraph tag with the text "Protocolos Ativos" -->
+                    <p> Protocolos Ativos </p>
+                </div>
+            </div>
+            <!-- This div tag opens a div with the classes "container-protocolo" and "c-finalizado" -->
+            <div class="container-protocolo c-finalizado">
+                <!-- This div tag opens a div with the classes "protocolo" and "prot-finalizado" -->
+                <div class="protocolo prot-finalizado">
+                    <!-- This div also has a paragraph tag with the text "Protocolos Finalizados" -->
+                    <p> Protocolos Finalizados </p>
+                </div>
+            </div>
+    </div>
+    <script src="../js/scriptReseacher.js"></script>
+</body>
+</html>
