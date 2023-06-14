@@ -48,9 +48,10 @@ body {
 
 /* Title text style */
 .tittle {
-	margin: auto;
+	margin: 0 auto;
 	color: #05401F;
-	font-size: 2vw;
+	font-size: 3vw;
+	text-align: center;
 }
 
 /* Main container style */
@@ -59,24 +60,26 @@ body {
 	width: 60%;
 	height: auto;
 	position: absolute;
-	margin-top: 2%;
+	margin-top: 5%;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 	background: #E7EBD7;
 	box-shadow: 8px 8px 10px rgba(0, 0, 0, 0.25);
 	border-radius: 26px;
+	padding: 10px;
 }
 
 /* Protocol's title style */
 .tittleProtocols {
+	font-size: 2vw;
 	margin-left: 3%;
 }
 
 /* Button style */
 .myButton {
 	width: 95%;
-	height: 40px;
+	height: 60px;
 	position: static;
 	background: #95D5B2;
 	border: 1px solid #05401F;
@@ -97,36 +100,45 @@ body {
 }
 
 /* Media queries for mobile devices */
-@media (max-width: 412px) {
-	.top {
-		display: flex;
-		justify-content: space-between;
-		flex-direction: row;
-	}
-	
-	/* Main container style */
-	.container {
-		width: 240px;
-		margin-top: 5%;
-		padding-bottom: 5px;
-	}
-
-	/* Button style */
+@media (max-width: 900px) {
 	.myButton {
 		width: 95%;
-		margin-left: 2%;
-	}
-
-	/* Title text style */
-	.tittle {
-		transform: scale(0.8);
-		margin: auto;
+		height: 40px;
+		position: static;
+		background: #95D5B2;
+		border: 1px solid #05401F;
+		border-radius: 5px;
 		color: #05401F;
+		text-align: center;
+		text-decoration: none;
+		display: inline-block;
+		font-size: 18px;
+		margin-left: 2%;
+		margin-bottom: 4%;
+		cursor: pointer;
 	}
-
-	/* Protocol's title style */
+	.tittle {
+		margin: 0 auto;
+		color: #05401F;
+		font-size: 5vw;
+		text-align: center;
+	}
 	.tittleProtocols {
-		transform: scale(0.8);
+		font-size: 4vw;
+		margin-left: 3%;
+	}
+}
+
+
+@media (max-width: 500px) {
+	.tittle {
+		margin: 0 auto;
+		color: #05401F;
+		font-size: 8vw;
+		text-align: center;
+	}
+	.tittleProtocols {
+		font-size: 7vw;
 		margin-left: 3%;
 	}
 }
