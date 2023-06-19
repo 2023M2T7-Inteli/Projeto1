@@ -13,40 +13,64 @@ let protocolName;
 let protocolId = urlParams.get("id");
 let stageID = urlParams.get("idStage");
 let itemList = [];
-let leftBar = [`<h1>ITENS</h1>`, `<p>(Selecione o item que deseja adicionar ao protocolo)</p>`, `<form method="post" action="/item/insereItem" class="myButton">
-<p>NOME</p>
+let leftBar = [`<h1>ITENS</h1>`, `<p>(Selecione o item que deseja adicionar ao protocolo)</p>`,
+`<form method="post" action="/item/insereItem" class="myButton">
+<p>NOME DA PLANTA</p>
 <input name="valor" type="hidden" value='<div class="nameSection" id="nameSection">
   <button class="deleteButton">-</button>
-  <input type="text" placeholder="INSIRA UM TÍTULO" class="inputTittle">
-  <input class="putName" type="text">
+  <input type="text" placeholder="INSIRA O NOME DA PLANTA" class="inputTittle">
+  <input class="putName" type="text" placeholder="o produtor insere o nome aqui">
 </div>'>
 <input type="hidden" name="ID_Etapa" value="${stageID}">
 <input type="hidden" name="ID_Protocolo" value="${protocolId}">
 <input type="hidden" name="currentUrl" value="${currentUrl}">
 <button onclick="addName()" type="submit" class="addIcon">+</button>
-</form>`, `<form method="post" action="/item/insereItem" class="myButton">
+</form>`,
+`<form method="post" action="/item/insereItem" class="myButton">
+<p>PARTE DA PLANTA</p>
+<input name="valor" type="hidden" value='<div class="nameSection" id="nameSection">
+  <button class="deleteButton">-</button>
+  <label>SELECIONE QUAL É A PARTE DA PLANTA DA AMOSTRA</label>
+
+  <div>
+  <input type="checkbox" id="checkbox1" name="checkbox1" value="value1">
+  <label for="checkbox1">foto planta bebê</label>
+  </div>
+
+  <div>
+  <input type="checkbox" id="checkbox2" name="checkbox2" value="value2">
+  <label for="checkbox2">foto planta adulta</label>
+  </div>
+
+  <div>
+  <input type="checkbox" id="checkbox3" name="checkbox3" value="value3">
+  <label for="checkbox1">foto planta com flor</label>
+  </div>
+
+  <div>
+  <input type="checkbox" id="checkbox4" name="checkbox4" value="value4">
+  <label for="checkbox1">foto planta com fruto</label>
+  </div>
+
+</div>'>
+<input type="hidden" name="ID_Etapa" value="${stageID}">
+<input type="hidden" name="ID_Protocolo" value="${protocolId}">
+<input type="hidden" name="currentUrl" value="${currentUrl}">
+<button onclick="addName()" type="submit" class="addIcon">+</button>
+</form>`,
+`<form method="post" action="/item/insereItem" class="myButton">
 <p>DATA</p>
 <input name="valor" type="hidden" value='<div class="dateSection" id="dateSection">
   <button class="deleteButton">-</button>
-  <input type="text" placeholder="INSIRA UM TÍTULO" class="inputTittle"> 
+  <input type="text" placeholder="Quando a amostra foi coletada?" class="inputTittle"> 
   <input type="date" class="dateInput" name="dateSection" id="dateSection">
   </div>'>
   <input type="hidden" name="ID_Etapa" value="${stageID}">
   <input type="hidden" name="ID_Protocolo" value="${protocolId}">
   <input type="hidden" name="currentUrl" value="${currentUrl}">
 <button onclick=addDate() type="submit" class="addIcon">+</button>
-</form>`, `<form method="post" action="/item/insereItem" class="myButton">
-<p>LOCAL</p>
-<input name="valor" type="hidden" value='<div class="localSection" id="localSection">
-  <button class="deleteButton">-</button>
-  <input type="text" id="address" class="inputTittle" placeholder="Localização">
-  <div id="map"></div>
-</div>'>
-<input type="hidden" name="ID_Etapa" value="${stageID}">
-<input type="hidden" name="ID_Protocolo" value="${protocolId}">
-<input type="hidden" name="currentUrl" value="${currentUrl}">
-<button onclick=addLocal() type="submit" class="addIcon">+</button>
-</form>`, `<form method="post" action="/item/insereItem" class="myButton">
+</form>`,
+`<form method="post" action="/item/insereItem" class="myButton">
 <p>FOTO</p>
 <input name="valor" type="hidden" value='<div class="photoSection" id="photoSection">
   <button class="deleteButton">-</button>
@@ -57,7 +81,99 @@ let leftBar = [`<h1>ITENS</h1>`, `<p>(Selecione o item que deseja adicionar ao p
   <input type="hidden" name="ID_Protocolo" value="${protocolId}">
   <input type="hidden" name="currentUrl" value="${currentUrl}">
 <button onclick=addPhoto() type="submit" class="addIcon">+</button>
-</form>`];
+</form>`,
+`<form method="post" action="/item/insereItem" class="myButton">
+<p>CLIMA</p>
+<input name="valor" type="hidden" value='<div class="nameSection" id="nameSection">
+  <button class="deleteButton">-</button>
+  <input type="text" placeholder="SELECIONE O QUE ESTAVA NA HORA DA COLHEITA" class="inputTittle">
+
+  <div>
+  <input type="checkbox" id="checkbox5" name="checkbox1" value="value1">
+  <label for="checkbox1">sol</label>
+  </div>
+
+  <div>
+  <input type="checkbox" id="checkbox6" name="checkbox2" value="value2">
+  <label for="checkbox2">chuva</label>
+  </div>
+
+  <div>
+  <input type="checkbox" id="checkbox7" name="checkbox3" value="value3">
+  <label for="checkbox1">nublado</label>
+  </div>
+
+  <div>
+  <input type="checkbox" id="checkbox8" name="checkbox4" value="value4">
+  <label for="checkbox1">pensar em outro clima</label>
+  </div>
+
+  </div>'>
+<input type="hidden" name="ID_Etapa" value="${stageID}">
+<input type="hidden" name="ID_Protocolo" value="${protocolId}">
+<input type="hidden" name="currentUrl" value="${currentUrl}">
+<button onclick="addName()" type="submit" class="addIcon">+</button>
+</form>`,
+`<form method="post" action="/item/insereItem" class="myButton">
+<p>PROCESSAMETO</p>
+<input name="valor" type="hidden" value='<div class="nameSection" id="nameSection">
+  <button class="deleteButton">-</button>
+  <input type="text" placeholder="SELECIONE O TIPO DE PROCESSAMENTO OU ESCREVA" class="inputTittle">
+
+  <div>
+  <input type="checkbox" id="checkbox9" name="checkbox1" value="value1">
+  <label for="checkbox1">triturado</label>
+  </div>
+
+  <div>
+  <input type="checkbox" id="checkbox10" name="checkbox2" value="value2">
+  <label for="checkbox2">secagem</label>
+  </div>
+
+  <div>
+  <input type="checkbox" id="checkbox11" name="checkbox3" value="value3">
+  <label for="checkbox1">amassado</label>
+  </div>
+
+  <div>
+  <input type="checkbox" id="checkbox12" name="checkbox4" value="value4">
+  <label for="checkbox1">pensar em outro trituramento</label>
+  </div>
+
+  </div>'>
+<input type="hidden" name="ID_Etapa" value="${stageID}">
+<input type="hidden" name="ID_Protocolo" value="${protocolId}">
+<input type="hidden" name="currentUrl" value="${currentUrl}">
+<button onclick="addName()" type="submit" class="addIcon">+</button>
+</form>`,
+`<form method="post" action="/item/insereItem" class="myButton">
+<p>COMO FOI EMBALADO</p>
+<input name="valor" type="hidden" value='<div class="nameSection" id="nameSection">
+  <button class="deleteButton">-</button>
+  <input type="text" placeholder="COMO A AMOSTRA FOI EMBALADA" class="inputTittle">
+  <input class="putName" type="text">
+  <input class="putName" type="text">
+</div>'>
+<input type="hidden" name="ID_Etapa" value="${stageID}">
+<input type="hidden" name="ID_Protocolo" value="${protocolId}">
+<input type="hidden" name="currentUrl" value="${currentUrl}">
+<button onclick="addName()" type="submit" class="addIcon">+</button>
+</form>`,
+`<form method="post" action="/item/insereItem" class="myButton">
+<p>EXTRAS</p>
+<input name="valor" type="hidden" value='<div class="nameSection" id="nameSection">
+  <button class="deleteButton">-</button>
+  <input type="text" placeholder="CLIQUE AQUI PARA ALTERAR O TÍTULO" class="inputTittle">
+  <input class="putName" type="text">
+  <input class="putName" type="text">
+</div>'>
+<input type="hidden" name="ID_Etapa" value="${stageID}">
+<input type="hidden" name="ID_Protocolo" value="${protocolId}">
+<input type="hidden" name="currentUrl" value="${currentUrl}">
+<button onclick="addName()" type="submit" class="addIcon">+</button>
+</form>`, 
+
+];
 let stagesList = [`<div class="titleStages"><h1>ETAPAS</h1><span onclick="addStage()" class="addIconStage">+</span></div>`, `<p>(Selecione a etapa que deseja adicionar ao protocolo)</p>`];
 
 window.onload = function() {
