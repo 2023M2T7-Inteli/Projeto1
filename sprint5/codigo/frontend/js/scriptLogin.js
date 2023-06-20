@@ -67,20 +67,33 @@ form.addEventListener('submit', (event) => {
   const emailValue = emailInput.value;
   const passwordValue = passwordInput.value;
 
-
   // Checking login credentials against stored data
+  let credentialsMatch = false;
   for (let i = 0; i < dataLogin.length; i++) {
-    if (dataLogin[i] == emailValue) {
-      if (dataPassword[i] == passwordValue) {
-        // Redirecting based on user type
-        if (dataType[i] == 1) {
-          // Redirect to the main screen for researchers
-          window.location.href = "../html/mainScreenReseacher.html";
-        } else if (dataType[i] == 0) {
-          // Redirect to the main screen for producers
-          window.location.href = "../html/mainScreenProducer.html";
-        }
+    if (dataLogin[i] == emailValue && dataPassword[i] == passwordValue) {
+      credentialsMatch = true;
+      // Redirecting based on user type
+      if (dataType[i] == 1) {
+        // Redirect to the main screen for researchers
+        window.location.href = "../html/mainScreenReseacher.html";
+      } else if (dataType[i] == 0) {
+        // Redirect to the main screen for producers
+        window.location.href = "../html/mainScreenProducer.html";
       }
+      break;
     }
+  }
+
+  // Displaying error message if credentials do not match and message is not already displayed
+  if (!credentialsMatch && !form.querySelector('.error-message')) {
+    const errorElement = document.createElement('p');
+    errorElement.textContent = 'Email ou Senha incorreta';
+    errorElement.classList.add('error-message');
+    form.appendChild(errorElement);
+
+    // Removing error message after 3 seconds
+    setTimeout(() => {
+      form.removeChild(errorElement);
+    }, 3000);
   }
 });
