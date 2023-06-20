@@ -3,7 +3,6 @@ import { Router } from "express";
 
 import etapaRouter from "./Etapa/rotas.js";
 import itemRouter from "./Item/rotas.js";
-import projetoRouter from "./Projeto/rotas.js";
 import protocoloRouter from "./Protocolo/rotas.js";
 import fotoRouter from "./Foto/rotas.js";
 import alocacaoRouter from "./alocacao/rotas.js";
@@ -17,9 +16,6 @@ routes.use("/usuario", usuarioRouter);
 
 routes.use("/etapa", etapaRouter);
 // The "etapaRouter" is used for handling requests to the "/etapa" route, this router handles operations related to "Etapa" (stage)
-
-routes.use("/projeto", projetoRouter);
-// The "projetoRouter" is used for handling requests to the "/projeto" route, this router handles operations related to "Projeto" (project)
 
 routes.use("/item", itemRouter);
 // The "itemRouter" is used for handling requests to the "/item" route, this router handles operations related to "Item"

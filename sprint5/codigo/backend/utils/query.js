@@ -3,9 +3,10 @@ import DBPATH from "../dbConnection.js";
 
 async function query(sql, ...args) {
   return new Promise((resolve, reject) => {
+    console.log(args[0])
     const db = new sqlite3.Database(DBPATH); // Abre o banco
 
-    db.all(sql, [...args], (err, rows) => {
+    db.all(sql, args[0], (err, rows) => {
       if (err) {
         throw err;
       }

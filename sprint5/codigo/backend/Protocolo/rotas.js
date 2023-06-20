@@ -22,12 +22,16 @@ protocoloRouter.post('/insereProtocolo', async (req, res) => {
 	res.setHeader('Access-Control-Allow-Origin', '*');
 	// Open the database connection
 	// SQL query to insert a new record into the Protocolo table
-	const sql = "INSERT INTO Protocolo (nome) VALUES ('" + req.body.nome + "')";
+	const sql = "INSERT INTO Protocolo (nome, status) VALUES (?, ?)";
 	// Execute the query to insert the new record
-	const response = await query(sql);
-	// End the response
-	res.end();
-});
+
+	//const sql = "INSERT INTO Protocolo (nome, status) VALUES ('"+ req.body.nome + "', '" + req.body.status + "')";
+	const response = await query(sql, [req.body.nome, req.body.status]);
+
+    res.end();
+  });
+
+;
 
 // Retrieve a specific record for updating
 protocoloRouter.get('/atualizarProtocolo', async (req, res) => {
@@ -35,9 +39,9 @@ protocoloRouter.get('/atualizarProtocolo', async (req, res) => {
 	res.statusCode = 200;
 	res.setHeader('Access-Control-Allow-Origin', '*');
 	// SQL query to select a specific record from the Protocolo table
-	const sql = "SELECT * FROM Protocolo WHERE ID_Protocolo=" + req.query.ID_Protocolo;
+	const sql = "SELECT * FROM Protocolo WHERE ID_Protocolo= ?";
 	// Execute the query and return the result as JSON
-	const response = await query(sql);
+	const response = await query(sql, [req.query.ID_Protocolo]);
 	
     res.json(response)
 });
@@ -48,9 +52,9 @@ protocoloRouter.post('/atualizarProtocolo', async (req, res) => {
 	res.statusCode = 200;
 	res.setHeader('Access-Control-Allow-Origin', '*');
 	// SQL query to update a record in the Protocolo table
-	const sql = "UPDATE Protocolo SET nome='" + req.body.nome + "' WHERE ID_Protocolo=" + req.body.ID_Protocolo;
+	const sql = "UPDATE Protocolo SET nome= ?'" + "', status= ?'" + "' WHERE ID_Protocolo= ?";
 	// Execute the query to update the record
-	const response = await query(sql);
+	const response = await query(sql, [req.body.nome, req.body.status, req.body.ID_Protocolo]);
 	
     res.json(response)
 });
@@ -61,9 +65,9 @@ protocoloRouter.get('/removeProtocolo', async (req, res) => {
 	res.statusCode = 200;
 	res.setHeader('Access-Control-Allow-Origin', '*');
 	// SQL query to delete a record from the Protocolo table
-	const sql = "DELETE FROM Protocolo WHERE ID_Protocolo='" + req.query.ID_Protocolo + "'";
+	const sql = "DELETE FROM Protocolo WHERE ID_Protocolo= ?'";
 	// Execute the query to delete the record
-	const response = await query(sql);
+	const response = await query(sql, [req.query.ID_Protocolo]);
 	
     res.json(response)
 });

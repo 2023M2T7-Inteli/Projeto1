@@ -25,7 +25,7 @@ itemRouter.post('/insereItem', async (req, res) => {
 	
 	const sql = "INSERT INTO Item (tipo_item, valor, status) VALUES (?, ?, ?)";
 	
-	const response = await query(sql, req.body.tipo_item, req.body.valor, req.body.status);
+	const response = await query(sql, [req.body.tipo_item, req.body.valor, req.body.status]);
 	
     res.json(response)
 	// End the response
@@ -38,9 +38,9 @@ itemRouter.get('/atualizarItem', async (req, res) => {
 	res.statusCode = 200;
 	res.setHeader('Access-Control-Allow-Origin', '*');
 	// SQL query to select a specific record from the Item table
-	const sql = "SELECT * FROM Item WHERE ID_Item= " + req.query.ID_Item;
+	const sql = "SELECT * FROM Item WHERE ID_Item= ?";
 
-	const response = await query(sql);
+	const response = await query(sql, [req.query.ID_Item]);
 	
     res.json(response)
 });
@@ -51,9 +51,9 @@ itemRouter.post('/atualizarItem', async (req, res) => {
 	res.statusCode = 200;
 	res.setHeader('Access-Control-Allow-Origin', '*');
 	// SQL query to update a record in the Item table
-	const sql = "UPDATE Item SET tipo_item='" + req.body.tipo_item + "', valor= '" + req.body.valor + "', status='" + req.body.status + "'  WHERE ID_Item=" + req.body.ID_Item;
+	const sql = "UPDATE Item SET tipo_item= ?'" + "', valor= ?'" + "', status= ?'" + "'  WHERE ID_Item= ?";
 	// Execute the query to update the record
-	const response = await query(sql);
+	const response = await query(sql, [req.body.tipo_item, req.body.valor, req.body.status, req.body.ID_Item]);
 	
     res.json(response)
 });
@@ -64,9 +64,9 @@ itemRouter.get('/removeItem', async (req, res) => {
 	res.statusCode = 200;
 	res.setHeader('Access-Control-Allow-Origin', '*');
 	// SQL query to delete a record from the Item table
-	const sql = "DELETE FROM Item WHERE ID_Item='" + req.query.ID_Item + "'";
+	const sql = "DELETE FROM Item WHERE ID_Item= ?'";
 	// Execute the query to delete the record
-	const response = await query(sql);
+	const response = await query(sql, [req.query.ID_Item]);
 	
     res.json(response)
 });
