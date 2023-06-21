@@ -17,7 +17,7 @@ let leftBar = [`<h1>ITENS</h1>`, `<p>(Selecione o item que deseja adicionar ao p
 `<form method="post" action="/item/insereItem" class="myButton">
 <p>NOME DA PLANTA</p>
 <input name="valor" type="hidden" value='<div class="nameSection" id="nameSection">
-  <button class="deleteButton">-</button>
+  <span onclick="addStage()" class="addIconStage"><img src="../imagens/delete.png"></span>
   <input type="text" placeholder="INSIRA O NOME DA PLANTA" class="inputTittle">
   <input class="putName" type="text" placeholder="o produtor insere o nome aqui">
 </div>'>
@@ -30,7 +30,7 @@ let leftBar = [`<h1>ITENS</h1>`, `<p>(Selecione o item que deseja adicionar ao p
 <p>PARTE DA PLANTA</p>
 <input name="valor" type="hidden" value='<div class="nameSection" id="nameSection">
   <button class="deleteButton">-</button>
-  <label>SELECIONE QUAL É A PARTE DA PLANTA DA AMOSTRA</label>
+  <label>QUAL É A PARTE DA PLANTA?</label>
 
   <div>
   <input type="checkbox" id="checkbox1" name="checkbox1" value="value1">
@@ -165,7 +165,6 @@ let leftBar = [`<h1>ITENS</h1>`, `<p>(Selecione o item que deseja adicionar ao p
   <button class="deleteButton">-</button>
   <input type="text" placeholder="CLIQUE AQUI PARA ALTERAR O TÍTULO" class="inputTittle">
   <input class="putName" type="text">
-  <input class="putName" type="text">
 </div>'>
 <input type="hidden" name="ID_Etapa" value="${stageID}">
 <input type="hidden" name="ID_Protocolo" value="${protocolId}">
@@ -174,7 +173,7 @@ let leftBar = [`<h1>ITENS</h1>`, `<p>(Selecione o item que deseja adicionar ao p
 </form>`, 
 
 ];
-let stagesList = [`<div class="titleStages"><h1>ETAPAS</h1><span onclick="addStage()" class="addIconStage">+</span></div>`, `<p>(Selecione a etapa que deseja adicionar ao protocolo)</p>`];
+let stagesList = [`<div class="titleStages"><h1>ETAPAS</h1><span onclick="addStage()" class="addIconStage"><img src="../imagens/add.png"></span></div>`, `<p>(Selecione a etapa que deseja adicionar ao protocolo)</p>`];
 
 window.onload = function() {
   stageID = urlParams.get("idStage");
