@@ -51,10 +51,9 @@ Criar uma interface dinâmica e simples, com diversas figuras e com a menor quan
 
 Clique <a href="https://www.linkedin.com/in/victorbarq/">AQUI</a> para ver o projeto funcionando.
 
-<pre>
 ## 📁 Estrutura de pastas
 
-
+<pre>
 |--> documentos<br>
     T7_G1_V5_Web_application_document.pdf<br>
     T7_G1_V5_Web_application_document.docx<br>
