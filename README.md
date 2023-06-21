@@ -30,6 +30,7 @@
 - <a href="https://www.linkedin.com/in/sergio-venancio-a509b342/">Sergio Venancio</a>
 
 ## 📝 Descrição
+<pre>
 
 Esse projeto, desenvolvido para o departamento de P&D da Natura, tem  como objetivo desenvolver um website para ajudar a empresa  no processo de recolhimento de matérias-primas, melhorando a interação entre seus pesquisadores e produtores. Para tal,  o processo que era analógico e realizado por meio de formulários impressos será transformado em uma plataforma digital, simples e acessível.
 
@@ -37,7 +38,6 @@ Esse projeto, desenvolvido para o departamento de P&D da Natura, tem  como objet
 <img src="/imagens/teko.jpg" alt="Logo Teko Porã" border="0">
 </p>
 
-<pre>
 Os objetivos gerais do projeto incluem tornar os protocolos de comunicação em ferramentas digitais, para que todos os dados sejam preenchidos corretamente e entregues completos aos pesquisadores. Além disso, o projeto tem como objetivo facilitar e democratizar o acesso ao preenchimento dos formulários por produtores com pouco letramento digital e acadêmico, também alterando a forma de armazenamento dos protocolos, utilizando JavaScript, React, Banco de dados e armazenando localmente as informações já preenchidas dos protocolos, para então enviá-los quando conectados com a internet.
 
 Além disso, temos objetivos específicos, que são:
