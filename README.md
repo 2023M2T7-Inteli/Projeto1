@@ -57,11 +57,12 @@ Clique <a href="https://www.linkedin.com/in/victorbarq/">AQUI</a> para ver o pro
 |--> documentos<br>
     T7_G1_V5_Web_application_document.pdf<br>
     T7_G1_V5_Web_application_document.docx<br>
-    &emsp;| --> outros <br>
+    | --> outros <br>
         &emsp;| T7_G1_V1_Web_application_document.pdf<br>
         &emsp;| T7_G1_V1_Web_application_document.docx<br>
         &emsp;| T7_G1_V2_Web_application_document.pdf<br>
-        &emsp;| T7_G1_V2_Web_application_document.docx<br>&emsp;| T7_G1_V3_Web_application_document.pdf<br>
+        &emsp;| T7_G1_V2_Web_application_document.docx<br>
+        &emsp;| T7_G1_V3_Web_application_document.pdf<br>
         &emsp;| T7_G1_V3_Web_application_document.docx<br>
         &emsp;| T7_G1_V4_Web_application_document.pdf<br>
         &emsp;| T7_G1_V4_Web_application_document.docx<br>
