@@ -42,18 +42,20 @@ p {
   margin-top: 30px;
   border-radius: 15px;
   display: inline-block;
-  width: 33%;
-  height: 700px;
+  width: 32%;
+  height: auto;
   vertical-align: top;
 }
 
 /* Middle Section */
 /* Styling for the middle section */
 .middle {
+  margin: 0 auto;
   background-color: #d0d3c1;
   border: 1px solid #3D3D3D;
   height: auto;
   align-items: center;
+  margin: 1%;
 }
 
 /* Button Style */
@@ -180,8 +182,9 @@ p {
 
 /* Delete Button Style */
 .deleteButton {
+  height: 25px;
   background-color: #ffffff;
-  border-radius: 15px;
+  border-radius: 20px;
 }
 
 /* Date Input Style */
@@ -313,4 +316,3 @@ p {
 #home-link:hover .home-icon {
   fill: #2e8b57; /* verde ainda mais escuro */
 }
-

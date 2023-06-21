@@ -8,7 +8,7 @@ const userSentUrl = '/enviar/'
 let currentUrl = window.location.href
 let correctName = false
 let containerStructure = [];
-let userSent = []
+let userSent = [`<h1>Enviados:</h1>`]
 let protocolName;
 let protocolId = urlParams.get("id");
 let stageID = urlParams.get("idStage");
@@ -311,7 +311,6 @@ function sendProducer(){
   const newParagraph = document.getElementById('main')
   // Appends each value in the "stagesList" list to the HTML
   newParagraph.innerHTML = textNewProtocol;
-
   
   fetch(userSentUrl)
   .then((response) => response.json())
@@ -322,7 +321,7 @@ function sendProducer(){
         userSent.push(`<div class="buttonUserSent">Usuário : ${data[i].ID_Usuario}</div>`)
       }
     }
-    const newParagraphReceived = document.getElementById('producerReceived')
+    const newParagraphReceived = document.getElementById('bottom')
     newParagraphReceived.innerHTML = userSent.join('');
   })
   .catch((error) => {
