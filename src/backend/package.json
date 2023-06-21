@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "start": "nodemon ./backend.js"
+    "dev": "nodemon ./backend.js"
   },
   "type": "module",
   "dependencies": {
