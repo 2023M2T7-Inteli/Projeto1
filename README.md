@@ -30,7 +30,6 @@
 - <a href="https://www.linkedin.com/in/sergio-venancio-a509b342/">Sergio Venancio</a>
 
 ## 📝 Descrição
-<pre>
 
 Esse projeto, desenvolvido para o departamento de P&D da Natura, tem  como objetivo desenvolver um website para ajudar a empresa  no processo de recolhimento de matérias-primas, melhorando a interação entre seus pesquisadores e produtores. Para tal,  o processo que era analógico e realizado por meio de formulários impressos será transformado em uma plataforma digital, simples e acessível.
 
@@ -47,7 +46,6 @@ Contribuir com a inclusão digital dos  produtores que fornecem matéria prima p
 Criar uma interface dinâmica e simples, com diversas figuras e com a menor quantidade possível de texto onde os pesquisadores poderão criar os protocolos com poucos cliques. Desta forma será fornecido uma dinamicidade e praticidade ao montarem os formulários.
 
 <a href="youtube.com">Vídeo Demo (Subir no youtube)</a>
-</pre>
 
 ## 📝 LINK
 
