@@ -51,6 +51,7 @@ Criar uma interface dinâmica e simples, com diversas figuras e com a menor quan
 
 Clique <a href="https://www.linkedin.com/in/victorbarq/">AQUI</a> para ver o projeto funcionando.
 
+<pre>
 ## 📁 Estrutura de pastas
 
 
@@ -72,7 +73,7 @@ Clique <a href="https://www.linkedin.com/in/victorbarq/">AQUI</a> para ver o pro
   &emsp;|--> Frontend<br>
 | LICENSE<br>
 | README.md<br>
-
+</pre>
 
 Dentre os arquivos presentes na raiz do projeto, definem-se:
 
