@@ -8,13 +8,13 @@
 
 ## :student: Integrantes: 
 - <a href="https://www.linkedin.com/in/ana-carolina-cremonezi-martire-2a7335268/
-">Ana Carolinha Martire</a>
+">Ana Carolina Martire</a>
 - <a href="https://www.linkedin.com/in/
 ">Ariel Kisilevzky</a>
 - <a href="https://www.linkedin.com/in/enzo-bressane-72a030219/
 ">Enzo Bressane</a> 
 - <a href="https://www.linkedin.com/in/gabriel-pelinsari-13185b1a0">Gabriel Pelinsari</a> 
-- <a href="https://www.linkedin.com/in/isabelle-beatriz-vasquez-oliveira-55a19626a/">Isabelle Vasquez</a>
+- <a href="https://www.linkedin.com/in/isabelle-beatriz-vasquez-oliveira-55a19626a/">Isabelle Oliveira</a>
 - <a href="https://www.linkedin.com/in/kaiane-souza-cordeiro-696076268/">Kaiane Souza</a> 
 - <a href="https://www.linkedin.com/in/thomas-abadi-4a44a1264">Thomas Abadi</a>
 
@@ -45,11 +45,10 @@ Explicitar todas as informações primordiais para os preenchimentos dos formul�
 Contribuir com a inclusão digital dos  produtores que fornecem matéria prima para a empresa Natura, através de uma interface simples e intuitiva que possibilita com que uma vasta gama de produtores possa utilizar sem problemas;
 Criar uma interface dinâmica e simples, com diversas figuras e com a menor quantidade possível de texto onde os pesquisadores poderão criar os protocolos com poucos cliques. Desta forma será fornecido uma dinamicidade e praticidade ao montarem os formulários.
 
+
+## 📝 Vídeo
+
 <a href="youtube.com">Vídeo Demo (Subir no youtube)</a>
-
-## 📝 LINK
-
-Clique <a href="https://www.linkedin.com/in/victorbarq/">AQUI</a> para ver o projeto funcionando.
 
 ## 📁 Estrutura de pastas
 
@@ -69,8 +68,29 @@ Clique <a href="https://www.linkedin.com/in/victorbarq/">AQUI</a> para ver o pro
 |--> imagens<br>
 |--> src<br>
   &emsp;|--> Backend<br>
+        &emsp;| alocacao<br>
+        &emsp;| Enviar<br>
+        &emsp;| Etapa<br>
+        &emsp;| Foto<br>
+        &emsp;| Item<br>
+        &emsp;| Projeto<br>
+        &emsp;| Protocolo<br>
+        &emsp;| Usuario<br>
+        &emsp;| utils<br>
+        &emsp;| Foto<br>
+        | backend.js
+        | dbConnection.js
+        | package-lock.json
+        | package.jason
+        | routes.js
   &emsp;|--> Data<br>
+        | banco.db
+        | banco.sql
   &emsp;|--> Frontend<br>
+        &emsp;| css<br>
+        &emsp;| html<br>
+        &emsp;| imagens<br>
+        &emsp;| js<br>
 | LICENSE<br>
 | README.md<br>
 </pre>
@@ -139,10 +159,6 @@ npm start
 ## 📋 Licença/License
 
 
-- FAZER A LICENSE
+<p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://github.com/2023M2T7-Inteli/Projeto1">Teko Porã</a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://github.com/2023M2T7-Inteli/Projeto1">INTELI, Ana Carolina Martire, Ariel Kisilevzky, Enzo Bressane, Gabriel Pelinsari, Isabelle Oliveira, Kaiane Souza, Thomas Abai </a> is licensed under <a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">Attribution 4.0 International<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"></a></p>
 
-
-<a href="https://drive.google.com/file/d/1hXWLHUhjBkPVuGqeE2LZKozFntnJZzlx/view">Tutorial</a>
-
-<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"><p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://github.com/Intelihub/Template_M2/">MODELO GIT INTELI</a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://www.yggbrasil.com.br/vr">Inteli, Nome do integrante 1, Nome do integrante 2, Nome do integrante 3, Nome do integrante 4, Nome do integrante 5, Nome do integrante 6, Nome do integrante 7</a> is licensed under <a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">Attribution 4.0 International</a>.</p>
-
+<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" xmlns:cc="http://creativecommons.org/ns#"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/">
