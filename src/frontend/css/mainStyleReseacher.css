@@ -93,6 +93,10 @@ body {
     font-size: 45px;
     text-align: center;
 }
+.orientation{
+    text-align: center;
+    font-size: 20px;
+}
 /*container style*/
 #container{
     display: flex;
