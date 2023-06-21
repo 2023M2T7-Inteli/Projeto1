@@ -53,46 +53,44 @@ Criar uma interface dinâmica e simples, com diversas figuras e com a menor quan
 ## 📁 Estrutura de pastas
 
 <pre>
-|--> documentos<br>
-    T7_G1_V5_Web_application_document.pdf<br>
-    T7_G1_V5_Web_application_document.docx<br>
-    | --> outros <br>
-        &emsp;| T7_G1_V1_Web_application_document.pdf<br>
-        &emsp;| T7_G1_V1_Web_application_document.docx<br>
-        &emsp;| T7_G1_V2_Web_application_document.pdf<br>
-        &emsp;| T7_G1_V2_Web_application_document.docx<br>
-        &emsp;| T7_G1_V3_Web_application_document.pdf<br>
-        &emsp;| T7_G1_V3_Web_application_document.docx<br>
-        &emsp;| T7_G1_V4_Web_application_document.pdf<br>
-        &emsp;| T7_G1_V4_Web_application_document.docx<br>
-|--> imagens<br>
-|--> src<br>
-  &emsp;|--> Backend<br>
-        &emsp;| alocacao<br>
-        &emsp;| Enviar<br>
-        &emsp;| Etapa<br>
-        &emsp;| Foto<br>
-        &emsp;| Item<br>
-        &emsp;| Projeto<br>
-        &emsp;| Protocolo<br>
-        &emsp;| Usuario<br>
-        &emsp;| utils<br>
-        &emsp;| Foto<br>
+|--> documentos
+    T7_G1_V5_Web_application_document.pdf
+    T7_G1_V5_Web_application_document.docx
+    | --> outros
+        &emsp;| T7_G1_V1_Web_application_document.pdf
+        &emsp;| T7_G1_V1_Web_application_document.docx
+        &emsp;| T7_G1_V2_Web_application_document.pdf
+        &emsp;| T7_G1_V2_Web_application_document.docx
+        &emsp;| T7_G1_V3_Web_application_document.pdf
+        &emsp;| T7_G1_V3_Web_application_document.docx
+        &emsp;| T7_G1_V4_Web_application_document.pdf
+        &emsp;| T7_G1_V4_Web_application_document.docx
+|--> imagens
+|--> src
+  &emsp;|--> Backend
+        &emsp;|--> alocacao
+        &emsp;|--> Enviar
+        &emsp;|--> Etapa
+        &emsp;|--> Foto
+        &emsp;|--> Item
+        &emsp;|--> Projeto
+        &emsp;|--> Protocolo
+        &emsp;|--> Usuario
+        &emsp;|--> utils
         | backend.js
         | dbConnection.js
         | package-lock.json
         | package.jason
         | routes.js
-  &emsp;|--> Data<br>
+  &emsp;|--> Data
         | banco.db
         | banco.sql
-  &emsp;|--> Frontend<br>
-        &emsp;| css<br>
-        &emsp;| html<br>
-        &emsp;| imagens<br>
-        &emsp;| js<br>
-| LICENSE<br>
-| README.md<br>
+  &emsp;|--> Frontend
+        &emsp;| css
+        &emsp;| html
+        &emsp;| js
+| LICENSE
+| README.md
 </pre>
 
 Dentre os arquivos presentes na raiz do projeto, definem-se:
@@ -160,5 +158,3 @@ npm start
 
 
 <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://github.com/2023M2T7-Inteli/Projeto1">Teko Porã</a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://github.com/2023M2T7-Inteli/Projeto1">INTELI, Ana Carolina Martire, Ariel Kisilevzky, Enzo Bressane, Gabriel Pelinsari, Isabelle Oliveira, Kaiane Souza, Thomas Abai </a> is licensed under <a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">Attribution 4.0 International<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"></a></p>
-
-<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" xmlns:cc="http://creativecommons.org/ns#"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/">
