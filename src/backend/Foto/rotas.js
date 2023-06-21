@@ -16,7 +16,7 @@ fotoRouter.get('/', async(req, res) => {
     const sql = 'SELECT * FROM Foto';
 
     // Executes the query and stores the response.
-    const response = await query(sql);
+    const response = await query(sql, []);
 
     // Sends the response as JSON.
     res.json(response);
@@ -29,10 +29,10 @@ fotoRouter.post('/insereFoto', async (req, res) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
 
     // SQL command to insert a new record into the Foto table using values from the request body.
-    const sql = "INSERT INTO Foto (tipo_de_foto, valor) VALUES ('" + req.body.tipo_de_foto + "', '" + req.body.valor + "')";
+    const sql = "INSERT INTO Foto (tipo_de_foto, valor) VALUES (?, ?)";
 
     // Executes the query and stores the response.
-    const response = await query(sql);
+    const response = await query(sql, [req.body.tipo_de_foto, req.body.valor]);
 
     // Sends the response as JSON and ends the response process.
     res.json(response);
@@ -46,10 +46,10 @@ fotoRouter.get('/atualizarFoto', async (req, res) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
 
     // SQL command to select a specific record from the Foto table.
-    const sql = "SELECT * FROM Foto WHERE ID_Foto=" + req.query.ID_Foto;
+    const sql = "SELECT * FROM Foto WHERE ID_Foto= ?";
 
     // Executes the query and stores the response.
-    const response = await query(sql);
+    const response = await query(sql, [req.query.ID_Foto]);
 
     // Sends the response as JSON.
     res.json(response);
@@ -62,10 +62,10 @@ fotoRouter.post('/atualizarFoto', async (req, res) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
 
     // SQL command to update a specific record in the Foto table.
-    const sql = "UPDATE Foto SET tipo_de_foto='" + req.body.tipo_de_item + "', valor= '" + req.body.valor + "'  WHERE ID_Item=" + req.body.ID_Item;
+    const sql = "UPDATE Foto SET tipo_de_foto= ?'" + "', valor= ?'" + "'  WHERE ID_Item= ?";
 
     // Executes the query and stores the response.
-    const response = await query(sql);
+    const response = await query(sql, [req.body.tipo_de_item, req.body.valor, req.body.ID_Item]);
 
     // Sends the response as JSON.
     res.json(response);
@@ -78,10 +78,10 @@ fotoRouter.get('/removeFoto', async (req, res) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
 
     // SQL command to delete a specific record from the Foto table.
-    const sql = "DELETE FROM Foto WHERE ID_Foto='" + req.query.ID_Foto + "'";
+    const sql = "DELETE FROM Foto WHERE ID_Foto= ?'";
 
     // Executes the query and stores the response.
-    const response = await query(sql);
+    const response = await query(sql, [req.query.ID_Foto]);
 
     // Sends the response as JSON.
     res.json(response);
