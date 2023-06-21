@@ -54,8 +54,8 @@ Criar uma interface dinâmica e simples, com diversas figuras e com a menor quan
 
 <pre>
 |--> documentos
-    T7_G1_V5_Web_application_document.pdf
-    T7_G1_V5_Web_application_document.docx
+    | T7_G1_V5_Web_application_document.pdf
+    | T7_G1_V5_Web_application_document.docx
     | --> outros
         &emsp;| T7_G1_V1_Web_application_document.pdf
         &emsp;| T7_G1_V1_Web_application_document.docx
