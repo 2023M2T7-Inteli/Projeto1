@@ -70,6 +70,21 @@ usuarioRouter.get('/tipoUsuario', async (req, res) => {
     // Send the response as JSON.
     res.json(response);
 });
+
+usuarioRouter.get('/idUsuario', async (req, res) => {
+    // Set the HTTP status code to 200 and allow cross-origin requests.
+    res.statusCode = 200;
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    
+    // SQL query to select all 'tipo' fields from the Usuario table.
+    const sql = 'SELECT ID_Usuario FROM Usuario';
+
+    // Execute the query and store the response.
+    const response = await query(sql);
+
+    // Send the response as JSON.
+    res.json(response);
+});
   
 // Endpoint to insert a new user.
 usuarioRouter.post('/insereUsuario', async (req, res) => {

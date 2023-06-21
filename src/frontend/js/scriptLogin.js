@@ -13,6 +13,8 @@ const urlsenha = '/usuario/senhaUsuario';
 // URL to fetch user type data 
 const urltipo = '/usuario/tipoUsuario'; 
 
+const urlID = '/usuario/idUsuario'; 
+
 // Variable to track if login is accepted
 let loginAccepted = false; 
 // Array to store login data retrieved from the server
@@ -21,6 +23,8 @@ let dataLogin = [];
 let dataPassword = [];
 // Array to store user type data retrieved from the server 
 let dataType = []; 
+
+let dataID = [];
 
 // Fetching login data from the server
 fetch(urllogin)
@@ -61,6 +65,18 @@ fetch(urltipo)
     console.error('An error occurred while fetching user type data:', error);
   });
 
+fetch(urlID)
+  .then((response) => response.json())
+  .then((data) => {
+    // Storing user type values in the dataType array
+    for (let i = 0; i < data.length; i++) {
+      dataID.push(data[i].ID_Usuario);
+    }
+  })
+  .catch((error) => {
+    console.error('An error occurred while fetching user type data:', error);
+  });
+
 // Adding a submit event listener to the form
 form.addEventListener('submit', (event) => {
   event.preventDefault();
@@ -75,10 +91,10 @@ form.addEventListener('submit', (event) => {
       // Redirecting based on user type
       if (dataType[i] == 1) {
         // Redirect to the main screen for researchers
-        window.location.href = "../html/mainScreenReseacher.html";
+        window.location.href = "../html/mainScreenReseacher.html?id=" + dataID[i];
       } else if (dataType[i] == 0) {
         // Redirect to the main screen for producers
-        window.location.href = "../html/mainScreenProducer.html";
+        window.location.href = "../html/mainScreenProducer.html?id=" + dataID[i];
       }
       break;
     }
