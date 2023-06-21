@@ -19,7 +19,7 @@ etapaRouter.get('/', async (req, res) => {
     const sql = 'SELECT * FROM Etapa';
 
     // Execute the SQL query and await the response.
-    const response = await query(sql);
+    const response = await query(sql, []);
 
     // Send the SQL query result as a JSON response.
     res.json(response);
@@ -34,10 +34,10 @@ etapaRouter.post('/insereEtapa', async (req, res) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
 
     // SQL query to insert a new record into the 'Etapa' table. Values come from the request body.
-    const sql = "INSERT INTO Etapa (nome, status, ID_Protocolo) VALUES ('" + req.body.nome + "', '" + req.body.status + "', '" + req.body.ID_Protocolo + "')";
+    const sql = "INSERT INTO Etapa (nome, status, ID_Protocolo) VALUES (?, ?, ?)";
 
     // Execute the SQL query and await the response.
-    const response = await query(sql);
+    const response = await query(sql, [req.body.nome, req.body.status, req.body.ID_Protocolo]);
 
     // Redirect the client to a new form page, passing the protocol ID as a query parameter.
     res.redirect("/html/newForm.html?id=" + req.body.ID_Protocolo);

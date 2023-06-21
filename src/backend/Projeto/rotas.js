@@ -16,7 +16,7 @@ projetoRouter.get('/', async (req, res) => {
     const sql = 'SELECT * FROM Projeto';
 
     // The SQL command is executed, and the response is stored.
-    const response = await query(sql);
+    const response = await query(sql , []);
 
     // The response is sent as JSON.
     res.json(response);
@@ -29,10 +29,10 @@ projetoRouter.post('/insereProjeto', async (req, res) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
 
     // An SQL command is defined to insert a new record into the Projeto table with values from the request body.
-    const sql = "INSERT INTO Projeto (nome, ativo) VALUES ('" + req.body.nome + "', '" + req.body.ativo + "')";
+    const sql = "INSERT INTO Projeto (nome, ativo) VALUES (?, ?)";
 
     // The SQL command is executed, and the response is stored.
-    const response = await query(sql);
+    const response = await query(sql, [req.body.nome, req.body.ativo]);
 
     // The response is sent as JSON.
     res.json(response);
@@ -45,10 +45,10 @@ projetoRouter.post('/atualizarProjetoGet', async (req, res) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
 
     // An SQL command is defined to select a specific record from the Projeto table based on the ID in the request body.
-    const sql = "SELECT * FROM Projeto WHERE ID_Projeto=" + req.body.ID_Projeto;
+    const sql = "SELECT * FROM Projeto WHERE ID_Projeto= ?";
 
     // The SQL command is executed, and the response is stored.
-    const response = await query(sql);
+    const response = await query(sql, [req.body.ID_Projeto]);
 
     // The response is sent as JSON.
     res.json(response);
@@ -61,10 +61,10 @@ projetoRouter.post('/atualizarProjeto', async (req, res) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
 
     // An SQL command is defined to update a specific record in the Projeto table based on the ID and values in the request body.
-    const sql = "UPDATE Projeto SET nome='" + req.body.nome + "', ativo= '" + req.body.ativo + "' WHERE ID_Projeto=" + req.body.ID_Projeto;
+    const sql = "UPDATE Projeto SET nome= ?'" + "', ativo= ?'" + "' WHERE ID_Projeto= ?";
 
     // The SQL command is executed, and the response is stored.
-    const response = await query(sql);
+    const response = await query(sql, [req.body.nome, req.body.ativo, req.body.ID_Projeto]);
 
     // The response is sent as JSON.
     res.json(response);
@@ -77,10 +77,10 @@ projetoRouter.post('/removeProjeto', async (req, res) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
 
     // An SQL command is defined to delete a specific record from the Projeto table based on the ID in the request body.
-    const sql = "DELETE FROM Projeto WHERE ID_Projeto='" + req.body.ID_Projeto + "'";
+    const sql = "DELETE FROM Projeto WHERE ID_Projeto= ?'";
 
     // The SQL command is executed, and the response is stored.
-    const response = await query(sql);
+    const response = await query(sql, [req.body.ID_Projeto]);
 
     // The response is sent as JSON.
     res.json(response);

@@ -16,7 +16,7 @@ usuarioRouter.get('/', async (req, res) => {
     const sql = 'SELECT * FROM Usuario';
 
     // Execute the query and store the response.
-    const response = await query(sql);
+    const response = await query(sql, []);
 
     // Send the response as JSON and end the response.
     res.json(response[0]);
@@ -33,7 +33,7 @@ usuarioRouter.get('/usuarioLogin', async (req, res) => {
     const sql = 'SELECT login FROM Usuario';
     
     // Execute the query and store the response.
-    const response = await query(sql);
+    const response = await query(sql, []);
 
     // Send the response as JSON.
     res.json(response);
@@ -49,7 +49,7 @@ usuarioRouter.get('/senhaUsuario', async (req, res) => {
     const sql = 'SELECT senha FROM Usuario';
 
     // Execute the query and store the response.
-    const response = await query(sql);
+    const response = await query(sql, []);
 
     // Send the response as JSON.
     res.json(response);
@@ -65,7 +65,7 @@ usuarioRouter.get('/tipoUsuario', async (req, res) => {
     const sql = 'SELECT tipo FROM Usuario';
 
     // Execute the query and store the response.
-    const response = await query(sql);
+    const response = await query(sql,[]);
 
     // Send the response as JSON.
     res.json(response);
@@ -93,10 +93,10 @@ usuarioRouter.post('/insereUsuario', async (req, res) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
     
     // SQL query to insert a new record into the Usuario table.
-    const sql = "INSERT INTO Usuario (login, senha, tipo) VALUES ('" + req.body.email + "', '" + req.body.password + "', '" + req.body.type + "')";
+    const sql = "INSERT INTO Usuario (login, senha, tipo) VALUES (?, ?, ?)";
 
     // Execute the query and store the response.
-    const response = await query(sql);
+    const response = await query(sql, [req.body.email, req.body.password, req.body.type]);
 
     // Redirect to the index page and end the response.
     res.redirect("/index.html");
