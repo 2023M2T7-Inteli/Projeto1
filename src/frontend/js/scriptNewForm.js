@@ -17,8 +17,11 @@ let leftBar = [`<h1>ITENS</h1>`, `<p>(Selecione o item que deseja adicionar ao p
 `<form method="post" action="/item/insereItem" class="myButton">
 <p>NOME DA PLANTA</p>
 <input name="valor" type="hidden" value='<div class="nameSection" id="nameSection">
-  <span onclick="addStage()" class="removeicon"><img src="../imagens/remove.png"></span>
-  <input type="text" placeholder="INSIRA O NOME DA PLANTA" class="inputTittle">
+  <div class="item">
+    <span ><img src="../imagens/flower.png"></span>
+    <input type="text" placeholder="Qual o nome da planta?" class="inputTittle">
+    <span onclick="removeStage()" class="removeicon"><img src="../imagens/delete.png"></span>
+  </div>
   <input class="putName" type="text" placeholder="o produtor insere o nome aqui">
 </div>'>
 <input type="hidden" name="ID_Etapa" value="${stageID}">
@@ -29,28 +32,34 @@ let leftBar = [`<h1>ITENS</h1>`, `<p>(Selecione o item que deseja adicionar ao p
 `<form method="post" action="/item/insereItem" class="myButton">
 <p>PARTE DA PLANTA</p>
 <input name="valor" type="hidden" value='<div class="nameSection" id="nameSection">
-  <button class="deleteButton">-</button>
-  <label>QUAL É A PARTE DA PLANTA?</label>
+  <div class="item">
+    <span ><img src="../imagens/question.png"></span>
+    <input type="text" placeholder="Qual é a parte da planta?" class="inputTittle">
+    <span onclick="removeStage()" class="removeicon"><img src="../imagens/delete.png"></span>
+  </div>
 
   <div>
   <input type="checkbox" id="checkbox1" name="checkbox1" value="value1">
-  <label for="checkbox1">foto planta bebê</label>
+  <label for="checkbox1">folha</label>
   </div>
 
   <div>
   <input type="checkbox" id="checkbox2" name="checkbox2" value="value2">
-  <label for="checkbox2">foto planta adulta</label>
+  <label for="checkbox2">flor</label>
   </div>
 
   <div>
   <input type="checkbox" id="checkbox3" name="checkbox3" value="value3">
-  <label for="checkbox1">foto planta com flor</label>
+  <label for="checkbox1">caule ou tronco</label>
   </div>
 
   <div>
   <input type="checkbox" id="checkbox4" name="checkbox4" value="value4">
-  <label for="checkbox1">foto planta com fruto</label>
+  <label for="checkbox1">semente</label>
   </div>
+
+  <input class="putName" type="text" placeholder="É outra parte?">
+
 
 </div>'>
 <input type="hidden" name="ID_Etapa" value="${stageID}">
@@ -61,8 +70,11 @@ let leftBar = [`<h1>ITENS</h1>`, `<p>(Selecione o item que deseja adicionar ao p
 `<form method="post" action="/item/insereItem" class="myButton">
 <p>DATA</p>
 <input name="valor" type="hidden" value='<div class="dateSection" id="dateSection">
-  <button class="deleteButton">-</button>
-  <input type="text" placeholder="Quando a amostra foi coletada?" class="inputTittle"> 
+  <div class="item">
+  <span ><img src="../imagens/calendar.png"></span>
+  <input type="text" placeholder="Quando a amostra foi coletada?" class="inputTittle">
+  <span onclick="removeStage()" class="removeicon"><img src="../imagens/delete.png"></span>
+  </div>
   <input type="date" class="dateInput" name="dateSection" id="dateSection">
   </div>'>
   <input type="hidden" name="ID_Etapa" value="${stageID}">
@@ -73,7 +85,11 @@ let leftBar = [`<h1>ITENS</h1>`, `<p>(Selecione o item que deseja adicionar ao p
 `<form method="post" action="/item/insereItem" class="myButton">
 <p>FOTO</p>
 <input name="valor" type="hidden" value='<div class="photoSection" id="photoSection">
-  <button class="deleteButton">-</button>
+  <div class="item">
+  <span ><img src="../imagens/camera.png"></span>
+  <input type="text" placeholder="Foto" class="inputTittle">
+  <span onclick="removeStage()" class="removeicon"><img src="../imagens/delete.png"></span>
+  </div>
   <input type="file" class="inputTittle" onchange="showPreview()"><br>
   <img src="" alt="Pré-visualização da Imagem" height="200">
   </div>'>
@@ -85,9 +101,11 @@ let leftBar = [`<h1>ITENS</h1>`, `<p>(Selecione o item que deseja adicionar ao p
 `<form method="post" action="/item/insereItem" class="myButton">
 <p>CLIMA</p>
 <input name="valor" type="hidden" value='<div class="nameSection" id="nameSection">
-  <button class="deleteButton">-</button>
-  <input type="text" placeholder="SELECIONE O QUE ESTAVA NA HORA DA COLHEITA" class="inputTittle">
-
+  <div class="item">
+  <span ><img src="../imagens/cloud_sun.png"></span>
+  <input type="text" placeholder="Como estava o clima?" class="inputTittle">
+  <span onclick="removeStage()" class="removeicon"><img src="../imagens/delete.png"></span>
+  </div>
   <div>
   <input type="checkbox" id="checkbox5" name="checkbox1" value="value1">
   <label for="checkbox1">sol</label>
@@ -105,7 +123,7 @@ let leftBar = [`<h1>ITENS</h1>`, `<p>(Selecione o item que deseja adicionar ao p
 
   <div>
   <input type="checkbox" id="checkbox8" name="checkbox4" value="value4">
-  <label for="checkbox1">pensar em outro clima</label>
+  <label for="checkbox1">frio</label>
   </div>
 
   </div>'>
@@ -117,8 +135,11 @@ let leftBar = [`<h1>ITENS</h1>`, `<p>(Selecione o item que deseja adicionar ao p
 `<form method="post" action="/item/insereItem" class="myButton">
 <p>PROCESSAMETO</p>
 <input name="valor" type="hidden" value='<div class="nameSection" id="nameSection">
-  <button class="deleteButton">-</button>
-  <input type="text" placeholder="SELECIONE O TIPO DE PROCESSAMENTO OU ESCREVA" class="inputTittle">
+  <div class="item">
+  <span ><img src="../imagens/setting.png"></span>
+  <input type="text" placeholder="Qual o processamento da amostra?" class="inputTittle">
+  <span onclick="removeStage()" class="removeicon"><img src="../imagens/delete.png"></span>
+  </div>
 
   <div>
   <input type="checkbox" id="checkbox9" name="checkbox1" value="value1">
@@ -137,7 +158,7 @@ let leftBar = [`<h1>ITENS</h1>`, `<p>(Selecione o item que deseja adicionar ao p
 
   <div>
   <input type="checkbox" id="checkbox12" name="checkbox4" value="value4">
-  <label for="checkbox1">pensar em outro trituramento</label>
+  <label for="checkbox1">sem processamento</label>
   </div>
 
   </div>'>
@@ -149,9 +170,11 @@ let leftBar = [`<h1>ITENS</h1>`, `<p>(Selecione o item que deseja adicionar ao p
 `<form method="post" action="/item/insereItem" class="myButton">
 <p>COMO FOI EMBALADO</p>
 <input name="valor" type="hidden" value='<div class="nameSection" id="nameSection">
-  <button class="deleteButton">-</button>
-  <input type="text" placeholder="COMO A AMOSTRA FOI EMBALADA" class="inputTittle">
-  <input class="putName" type="text">
+  <div class="item">
+  <span ><img src="../imagens/truck.png"></span>
+  <input type="text" placeholder="Como a amostra foi embalada?" class="inputTittle">
+  <span onclick="removeStage()" class="removeicon"><img src="../imagens/delete.png"></span>
+  </div>
   <input class="putName" type="text">
 </div>'>
 <input type="hidden" name="ID_Etapa" value="${stageID}">
@@ -162,8 +185,11 @@ let leftBar = [`<h1>ITENS</h1>`, `<p>(Selecione o item que deseja adicionar ao p
 `<form method="post" action="/item/insereItem" class="myButton">
 <p>EXTRAS</p>
 <input name="valor" type="hidden" value='<div class="nameSection" id="nameSection">
-  <button class="deleteButton">-</button>
-  <input type="text" placeholder="CLIQUE AQUI PARA ALTERAR O TÍTULO" class="inputTittle">
+  <div class="item">
+  <span ><img src="../imagens/pencil.png"></span>
+  <input type="text" placeholder="Clique aqui para alterar" class="inputTittle">
+  <span onclick="removeStage()" class="removeicon"><img src="../imagens/delete.png"></span>
+  </div>
   <input class="putName" type="text">
 </div>'>
 <input type="hidden" name="ID_Etapa" value="${stageID}">

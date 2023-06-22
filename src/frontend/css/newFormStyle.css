@@ -325,3 +325,8 @@ p {
 #home-link:hover .home-icon {
   fill: #2e8b57; /* verde ainda mais escuro */
 }
+
+.item{
+  display: flex;
+  justify-content: space-between;
+}
