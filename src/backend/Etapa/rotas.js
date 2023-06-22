@@ -34,13 +34,13 @@ etapaRouter.post('/insereEtapa', async (req, res) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
 
     // SQL query to insert a new record into the 'Etapa' table. Values come from the request body.
-    const sql = "INSERT INTO Etapa (nome, status, ID_Protocolo) VALUES (?, ?, ?)";
+    const sql = "INSERT INTO Etapa (nome, status, ID_Protocolo) VALUES (?, 1, ?)";
 
     // Execute the SQL query and await the response.
-    const response = await query(sql, [req.body.nome, req.body.status, req.body.ID_Protocolo]);
+    const response = await query(sql, [req.body.nome, req.body.ID_Protocolo]);
 
     // Redirect the client to a new form page, passing the protocol ID as a query parameter.
-    res.redirect("/html/newForm.html?id=" + req.body.ID_Protocolo);
+    res.redirect("/html/newForm.html?id=" + req.body.ID_Protocolo + "&idStage=" + req.body.lastStageID);
 });
 
 // Define an endpoint for a GET request at '/alocaItem'. It fetches all records from the 'Etapa' table and joins them with the 'Item' table based on 'ID_Item'.

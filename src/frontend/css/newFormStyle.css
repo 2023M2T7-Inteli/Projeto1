@@ -105,6 +105,7 @@ p {
 .addIconStage{
   scale: 0.2;
   margin: 0 auto;
+  margin-top: -20px;
 }
 
 
@@ -114,6 +115,12 @@ p {
   width: 33.3%;
   display: flex;
   height: 80px;
+}
+
+.addThing{
+  justify-content: space-around;
+  display: flex;
+  height: 45.33px;
 }
 
 .inputStage{
@@ -211,7 +218,7 @@ p {
   background: transparent;
   margin-top: 2%;
   margin-bottom: 2%;
-  width: 80%;
+  width: 60%;
   padding: 8px;
   font-size: large;
   border-radius: 4px;
@@ -235,6 +242,10 @@ p {
   border: none;
   outline: none;
   font-size: xx-large;
+}
+
+.removeIcon{
+  width: 10%;
 }
 
 /* Protocol Name Placeholder Style */

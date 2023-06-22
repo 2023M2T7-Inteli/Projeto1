@@ -144,8 +144,11 @@ body {
 	font-size: 14px;
 }
 
-
-
+.top {
+    display: flex;
+    flex-direction: row;
+    margin: 16px;
+  }
 
 /* Changes style for screens with a width of a maximum of 1068 pixels */
 @media only screen and (max-width: 1068px) {

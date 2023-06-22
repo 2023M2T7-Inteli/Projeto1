@@ -17,7 +17,7 @@ let leftBar = [`<h1>ITENS</h1>`, `<p>(Selecione o item que deseja adicionar ao p
 `<form method="post" action="/item/insereItem" class="myButton">
 <p>NOME DA PLANTA</p>
 <input name="valor" type="hidden" value='<div class="nameSection" id="nameSection">
-  <span onclick="addStage()" class="addIconStage"><img src="../imagens/delete.png"></span>
+  <span onclick="addStage()" class="removeicon"><img src="../imagens/remove.png"></span>
   <input type="text" placeholder="INSIRA O NOME DA PLANTA" class="inputTittle">
   <input class="putName" type="text" placeholder="o produtor insere o nome aqui">
 </div>'>
@@ -174,6 +174,7 @@ let leftBar = [`<h1>ITENS</h1>`, `<p>(Selecione o item que deseja adicionar ao p
 
 ];
 let stagesList = [`<div class="titleStages"><h1>ETAPAS</h1><span onclick="addStage()" class="addIconStage"><img src="../imagens/add.png"></span></div>`, `<p>(Selecione a etapa que deseja adicionar ao protocolo)</p>`];
+let lastStageID; 
 
 window.onload = function() {
   stageID = urlParams.get("idStage");
@@ -209,6 +210,8 @@ fetch(urlEtapas)
       }
     }
     newParagraph.innerHTML = stagesList.join('');
+
+    lastStageID = (data[data.length - 1].ID_Etapa) + 1
 
     if (stagesList.length > 2){
       const newParagraphLeft = document.getElementById('leftBar')
@@ -286,9 +289,8 @@ function addStage() {
   const createStageText = `<form id="myContainer" class="myButtonNew" name="putStage" method="post" action="/etapa/insereEtapa">
   NOME: <input class="inputStage" type="text" name="nome" value="" required>
   <br>
-  ATIVO: <input class="inputStage" type="number" name="status" value="" required>
-  <br>
   <input type="hidden" name="ID_Protocolo" value="${protocolId}">
+  <input type="hidden" name="lastStageID" value="${lastStageID}">
   <button class="buttonStage" type="submit">ENVIAR</button>
   </form>`
   stagesList.push(createStageText)
