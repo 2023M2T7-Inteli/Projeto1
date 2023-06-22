@@ -80,27 +80,7 @@ p {
   cursor: pointer;
 }
 
-/* Add Icon Style */
-.addIcon {
-  border: 1px solid #05401F;
-  width: 32px;
-  height: 32px;
-  background-color: #7ab193;
-  border-radius: 50%;
-  font-size: 20px;
-  text-align: center;
-  line-height: 32px;
-  cursor: pointer;
-  color: white;
-}
 
-/* Add Icon Positioning */
-.addIcon {
-  position: absolute;
-  top: 50%;
-  right: 10px;
-  transform: translateY(-50%);
-}
 
 .addIconStage{
   scale: 0.2;
@@ -328,5 +308,34 @@ p {
 
 .item{
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+
+  align-items: center;
+}
+
+.item img {
+  width: 25px;
+  height: 100%;
+  object-fit: cover;
+} 
+
+.addIcon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 20px;
+    height: 20px;
+
+    border-radius: 50%;
+    border: 1.7px solid green;
+    background-color: transparent;
+    
+    color: green;
+    font-size: 25px;
+    font-weight: 100;
+
+    margin-bottom: 10px;
+
+    cursor: pointer;
 }

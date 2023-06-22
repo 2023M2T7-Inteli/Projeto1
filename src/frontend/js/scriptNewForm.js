@@ -187,7 +187,7 @@ let leftBar = [`<h1>ITENS</h1>`, `<p>(Selecione o item que deseja adicionar ao p
 <input name="valor" type="hidden" value='<div class="nameSection" id="nameSection">
   <div class="item">
   <span ><img src="../imagens/pencil.png"></span>
-  <input type="text" placeholder="Clique aqui para alterar" class="inputTittle">
+  <input type="text" placeholder="Clique aqui" class="inputTittle">
   <span onclick="removeStage()" class="removeicon"><img src="../imagens/delete.png"></span>
   </div>
   <input class="putName" type="text">
