@@ -29,15 +29,15 @@ body {
 .content {
     display: flex;
     flex-direction: column;
-    margin-top: 5%;
+    margin-top: 0%;
     width: 100%;
 }
 
 /* Container-protocolo style */
 .container-protocolo {
     display: flex;
-    margin-right: 18%;
-    margin-left: 18%;
+    margin-right: 50%;
+    margin-left: 50%;
     display: grid;
 }
 /* Protocolo style */
