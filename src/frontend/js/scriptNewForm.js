@@ -13,6 +13,7 @@ let protocolName;
 let protocolId = urlParams.get("id");
 let stageID = urlParams.get("idStage");
 let itemList = [];
+let itemIdList = [];
 let leftBar = [`<h1>ITENS</h1>`, `<p>(Selecione o item que deseja adicionar ao protocolo)</p>`,
 `<form method="post" action="/item/insereItem" class="myButton">
 <p>NOME DA PLANTA</p>
@@ -36,26 +37,44 @@ let leftBar = [`<h1>ITENS</h1>`, `<p>(Selecione o item que deseja adicionar ao p
     <span ><img src="../imagens/question.png"></span>
     <input type="text" placeholder="Qual é a parte da planta?" class="inputTittle">
     <span onclick="removeStage()" class="removeicon"><img src="../imagens/delete.png"></span>
+  </div> 
+
+  <div class="checkbox-section">
+    <div>
+      <div class="checkbox-container">
+      <img src="../imagens/folha.jpg" alt="folha">
+      <div class="desc">
+        <input type="checkbox" id="checkbox1" name="checkbox1" value="value1">
+        <label for="checkbox1">folha</label>
+      </div>
+    </div>
+
+      <div class="checkbox-container">
+        <img src="../imagens/flor.jpg" alt="flor">
+        <div class="desc">
+          <input type="checkbox" id="checkbox2" name="checkbox2" value="value2">
+          <label for="checkbox2">flor</label>
+        </div>
+      </div>
+    </div>
+
+    <div>
+    <div class="checkbox-container">
+    <img src="../imagens/tronco.jpg" alt="tronco">
+    <div class="desc">
+      <input type="checkbox" id="checkbox3" name="checkbox3" value="value3">
+      <label for="checkbox1">caule ou tronco</label>
+    </div>
   </div>
 
-  <div>
-  <input type="checkbox" id="checkbox1" name="checkbox1" value="value1">
-  <label for="checkbox1">folha</label>
+  <div class="checkbox-container">
+    <img src="../imagens/semente.jpg" alt="semente">
+    <div class="desc">
+      <input type="checkbox" id="checkbox4" name="checkbox4" value="value4">
+      <label for="checkbox1">semente</label>
+    </div>
   </div>
-
-  <div>
-  <input type="checkbox" id="checkbox2" name="checkbox2" value="value2">
-  <label for="checkbox2">flor</label>
-  </div>
-
-  <div>
-  <input type="checkbox" id="checkbox3" name="checkbox3" value="value3">
-  <label for="checkbox1">caule ou tronco</label>
-  </div>
-
-  <div>
-  <input type="checkbox" id="checkbox4" name="checkbox4" value="value4">
-  <label for="checkbox1">semente</label>
+    </div>
   </div>
 
   <input class="putName" type="text" placeholder="É outra parte?">
@@ -100,33 +119,52 @@ let leftBar = [`<h1>ITENS</h1>`, `<p>(Selecione o item que deseja adicionar ao p
 </form>`,
 `<form method="post" action="/item/insereItem" class="myButton">
 <p>CLIMA</p>
-<input name="valor" type="hidden" value='<div class="nameSection" id="nameSection">
-  <div class="item">
-  <span ><img src="../imagens/cloud_sun.png"></span>
-  <input type="text" placeholder="Como estava o clima?" class="inputTittle">
-  <span onclick="removeStage()" class="removeicon"><img src="../imagens/delete.png"></span>
-  </div>
-  <div>
-  <input type="checkbox" id="checkbox5" name="checkbox1" value="value1">
-  <label for="checkbox1">sol</label>
+<input name="valor" type="hidden" value='        <div class="nameSection" id="nameSection">
+<div class="item">
+<span ><img src="../imagens/cloud_sun.png"></span>
+<input type="text" placeholder="Como estava o clima?" class="inputTittle">
+<span onclick="removeStage()" class="removeicon"><img src="../imagens/delete.png"></span>
+</div>
+
+<div class="checkbox-section">
+<div>
+  <div class="checkbox-container">
+  <img src="../imagens/sol.jpg" alt="folha">
+      <div class="desc">
+        <input type="checkbox" id="checkbox1" name="checkbox1" value="value1">
+        <label for="checkbox1">sol</label>
+      </div>
+    </div>
+
+    <div class="checkbox-container">
+      <img src="../imagens/chuva.jpg" alt="flor">
+      <div class="desc">
+        <input type="checkbox" id="checkbox2" name="checkbox2" value="value2">
+        <label for="checkbox2">chuva</label>
+      </div>
+    </div>
+
   </div>
 
   <div>
-  <input type="checkbox" id="checkbox6" name="checkbox2" value="value2">
-  <label for="checkbox2">chuva</label>
+    <div class="checkbox-container">
+      <img src="../imagens/frio.jpg" alt="tronco">
+      <div class="desc">
+        <input type="checkbox" id="checkbox3" name="checkbox3" value="value3">
+        <label for="checkbox1">frio</label>
+    </div>
   </div>
 
-  <div>
-  <input type="checkbox" id="checkbox7" name="checkbox3" value="value3">
-  <label for="checkbox1">nublado</label>
+  <div class="checkbox-container">
+    <img src="../imagens/nublado.jpg" alt="semente">
+    <div class="desc">
+      <input type="checkbox" id="checkbox4" name="checkbox4" value="value4">
+      <label for="checkbox1">nublado</label>
+    </div>
   </div>
-
-  <div>
-  <input type="checkbox" id="checkbox8" name="checkbox4" value="value4">
-  <label for="checkbox1">frio</label>
-  </div>
-
-  </div>'>
+</div>
+</div> 
+</div>'>
 <input type="hidden" name="ID_Etapa" value="${stageID}">
 <input type="hidden" name="ID_Protocolo" value="${protocolId}">
 <input type="hidden" name="currentUrl" value="${currentUrl}">
@@ -134,34 +172,52 @@ let leftBar = [`<h1>ITENS</h1>`, `<p>(Selecione o item que deseja adicionar ao p
 </form>`,
 `<form method="post" action="/item/insereItem" class="myButton">
 <p>PROCESSAMETO</p>
-<input name="valor" type="hidden" value='<div class="nameSection" id="nameSection">
+<input name="valor" type="hidden" value='
+<div class="nameSection" id="nameSection">
   <div class="item">
-  <span ><img src="../imagens/setting.png"></span>
-  <input type="text" placeholder="Qual o processamento da amostra?" class="inputTittle">
-  <span onclick="removeStage()" class="removeicon"><img src="../imagens/delete.png"></span>
+    <span ><img src="../imagens/setting.png"></span>
+    <input type="text" placeholder="Qual o processamento da amostra?" class="inputTittle">
+    <span onclick="removeStage()" class="removeicon"><img src="../imagens/delete.png"></span>
   </div>
+  <div class="checkbox-section">
+    <div>
+      <div class="checkbox-container">
+        <img src="../imagens/sem.jpg" alt="folha">
+        <div class="desc">
+          <input type="checkbox" id="checkbox1" name="checkbox1" value="value1">
+          <label for="checkbox1">sem processamento</label>
+        </div>
+      </div>
 
-  <div>
-  <input type="checkbox" id="checkbox9" name="checkbox1" value="value1">
-  <label for="checkbox1">triturado</label>
+      <div class="checkbox-container">
+        <img src="../imagens/triturar.jpg" alt="flor">
+        <div class="desc">
+          <input type="checkbox" id="checkbox2" name="checkbox2" value="value2">
+          <label for="checkbox2">triturar</label>
+        </div>
+      </div>
+
+    </div>
+
+    <div>
+      <div class="checkbox-container">
+      <img src="../imagens/secagem.jpg" alt="tronco">
+      <div class="desc">
+        <input type="checkbox" id="checkbox3" name="checkbox3" value="value3">
+       <label for="checkbox1">secagem</label>
+      </div>
+    </div>
+
+    <div class="checkbox-container">
+      <img src="../imagens/amassar.jpg" alt="semente">
+      <div class="desc">
+       <input type="checkbox" id="checkbox4" name="checkbox4" value="value4">
+        <label for="checkbox1">amassar ou esmagar</label>
+      </div>
+    </div>
   </div>
-
-  <div>
-  <input type="checkbox" id="checkbox10" name="checkbox2" value="value2">
-  <label for="checkbox2">secagem</label>
-  </div>
-
-  <div>
-  <input type="checkbox" id="checkbox11" name="checkbox3" value="value3">
-  <label for="checkbox1">amassado</label>
-  </div>
-
-  <div>
-  <input type="checkbox" id="checkbox12" name="checkbox4" value="value4">
-  <label for="checkbox1">sem processamento</label>
-  </div>
-
-  </div>'>
+</div> 
+</div>'>
 <input type="hidden" name="ID_Etapa" value="${stageID}">
 <input type="hidden" name="ID_Protocolo" value="${protocolId}">
 <input type="hidden" name="currentUrl" value="${currentUrl}">
@@ -259,6 +315,7 @@ fetch(urlItem)
     const newParagraph = document.getElementById('myContainer');
     for (let i = 0; i < data.length; i++) {
       if (data[i].ID_Etapa == stageID) {
+        itemIdList.push(data[i].ID_Item)
         itemList.push(data[i].valor);
       }
     }
@@ -324,6 +381,7 @@ function addStage() {
   const newParagraph = document.getElementById('stageContainer')
   newParagraph.innerHTML = stagesList.join('');
 }
+
 
 function sendProducer(){
   const textNewProtocol = `<form class="sendProducerForm" id="container" method="post" action="/enviar/insereEnviar">

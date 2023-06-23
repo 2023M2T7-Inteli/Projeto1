@@ -11,6 +11,7 @@ let itemList =[]
 let userId;
 let protocolIDButton;
 let stageID;
+let userEmail;
 
 fetch(urlEnvios)
   .then((response) => response.json())
@@ -31,7 +32,6 @@ fetch(urlProtocolos)
   .then((data) => {
     for (let i = 0; i < protocolId.length; i++) {
         for (let j = 0; j < data.length; j++) {
-            console.log(data[j].ID_Protocolo, protocolId[i])
             if (data[j].ID_Protocolo == protocolId[i]) {
                 if (data[j].status == 1){
                     ativos.push(`<button value="${data[j].ID_Protocolo}" onclick=getProtocol(this) class="myButton">${data[j].nome}</button> `)

@@ -5,6 +5,7 @@ let protocolsList = []
 let protocolsListID = []
 let activeProtocolsList = [`<h1 class="titleString">ATIVOS</h1>`]
 let finishedProtocolsList = [`<h1 class="titleString">FINALIZADOS</h1>`]
+let lastID;
 
 fetch(protocolNameUrl)
   .then((response) => response.json())
@@ -19,17 +20,26 @@ fetch(protocolNameUrl)
 });
 
 function newProtocol(){
-  const textNewProtocol = `<form id="container" name="formNewForm" method="post" action="/protocolo/insereProtocolo">
-  <h1 class="titleString">CRIAR NOVO PROTOCOLO</h1>
-  <input name="nome" id="stageName" class="inputProtocol" type="text" placeholder="    Nome do novo protocolo" required><br>
-  <label class="orientation">Digite 1 para tornar o status do protocolo ativo:</label>
-  <input type="text" class="inputProtocol" name="status" placeholder="    Status do novo protocolo">
-  <button class="nextButton" type="submit">Criar</button>
-  </form>`
-  // Defines a constant to store the ID of the structure that will receive the div
-  const newParagraph = document.getElementById('content')
-  // Appends each value in the "stagesList" list to the HTML
-  newParagraph.innerHTML = textNewProtocol;
+  fetch(protocolNameUrl)
+  .then((response) => response.json())
+  .then((data) => {
+    lastID = data[data.length - 1].ID_Protocolo + 1
+    const textNewProtocol = `<form id="container" name="formNewForm" method="post" action="/protocolo/insereProtocolo">
+    <h1 class="titleString">CRIAR NOVO PROTOCOLO</h1>
+    <input name="nome" id="stageName" class="inputProtocol" type="text" placeholder="    Nome do novo protocolo" required><br>
+    <input type="hidden" class="inputProtocol" name="status" value="1">
+    <input type="hidden" name="lastID" value="${lastID}">
+    <button class="nextButton" type="submit">Criar</button>
+    </form>`
+      // Defines a constant to store the ID of the structure that will receive the div
+    const newParagraph = document.getElementById('content')
+    // Appends each value in the "stagesList" list to the HTML
+    newParagraph.innerHTML = textNewProtocol;
+    console.log(lastID)
+  })
+  .catch((error) => {
+    console.error('An error occurred while fetching login data:', error);
+  });
 }
 
 function activeProtocols() {

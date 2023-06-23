@@ -339,3 +339,27 @@ p {
 
     cursor: pointer;
 }
+.checkbox-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.checkbox-container img {
+  width: 110px;
+  height: 110px;
+}
+
+.checkbox-section {
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.desc{
+  display: flex;
+}

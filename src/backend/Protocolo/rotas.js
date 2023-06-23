@@ -29,7 +29,7 @@ protocoloRouter.post('/insereProtocolo', async (req, res) => {
 	// Execute the query to insert the new record
 	const response = await query(sql, [req.body.nome, req.body.status]);
 	// Redirect to the new form page
-    res.redirect("/html/newForm.html")
+    res.redirect("/html/newForm.html?id=" + req.body.lastID)
 });
 
 // Retrieve a specific record for updating

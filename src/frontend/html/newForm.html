@@ -28,7 +28,55 @@
       <div id="leftBar" class="section left"></div>
       
       <!-- Middle section of the main content -->
-      <div id="myContainer" class="section middle"></div>  
+      <div id="myContainer" class="section middle">
+
+        <div class="nameSection" id="nameSection">
+          <div class="item">
+            <span ><img src="../imagens/question.png"></span>
+            <input type="text" placeholder="Qual é a parte da planta?" class="inputTittle">
+            <span onclick="removeStage()" class="removeicon"><img src="../imagens/delete.png"></span>
+          </div> 
+          
+        <div class="checkbox-section">
+          <div>
+            <div class="checkbox-container">
+              <img src="../imagens/folha.jpg" alt="folha">
+              <div class="desc">
+                  <input type="checkbox" id="checkbox1" name="checkbox1" value="value1">
+                  <label for="checkbox1">sol</label>
+                </div>
+              </div>
+        
+              <div class="checkbox-container">
+                <img src="../imagens/chuva.jpg" alt="flor">
+                <div class="desc">
+                  <input type="checkbox" id="checkbox2" name="checkbox2" value="value2">
+                  <label for="checkbox2">chuva</label>
+                </div>
+              </div>
+
+            </div>
+        
+            <div>
+              <div class="checkbox-container">
+                <img src="../imagens/frio.jpg" alt="tronco">
+                <div class="desc">
+                  <input type="checkbox" id="checkbox3" name="checkbox3" value="value3">
+                  <label for="checkbox1">frio</label>
+              </div>
+            </div>
+        
+            <div class="checkbox-container">
+              <img src="../imagens/nublado.jpg" alt="semente">
+              <div class="desc">
+                <input type="checkbox" id="checkbox4" name="checkbox4" value="value4">
+                <label for="checkbox1">nublado</label>
+              </div>
+            </div>
+          </div>
+        </div> 
+      </div>
+     </div>  
       
       <!-- Section to the right of the main content with the id of stageContainer -->
       <div class="section right" id= "stageContainer">
