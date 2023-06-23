@@ -46,9 +46,14 @@ Contribuir com a inclusão digital dos  produtores que fornecem matéria prima p
 Criar uma interface dinâmica e simples, com diversas figuras e com a menor quantidade possível de texto onde os pesquisadores poderão criar os protocolos com poucos cliques. Desta forma será fornecido uma dinamicidade e praticidade ao montarem os formulários.
 
 
+## 📝 LINK
+
+Esta versão de entrega não incluirá link para o deploy em um servidor.
+
+
 ## 📝 Vídeo
 
-<a href="youtube.com">Vídeo Demo (Subir no youtube)</a>
+<a href="https://www.youtube.com/watch?v=xV6uGnHp_1A">Vídeo Demo</a>
 
 ## 📁 Estrutura de pastas
 
