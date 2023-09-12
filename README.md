@@ -123,9 +123,9 @@ npm install
 Isso instalará todas as dependências definidas no arquivo <b>package.json</b> que são necessárias para rodar o projeto. Agora o projeto já está pronto para ser modificado. Caso ainda deseje iniciar a aplicação, digite o comando abaixo no terminal:
 
 ```sh
-npm start
+npm run dev
 ```
-5. Agora você pode acessar a aplicação através do link http://localhost:3001/
+5. Agora você pode acessar a aplicação através do link http://localhost:3001/ 
 6. O servidor está online.
 
 
